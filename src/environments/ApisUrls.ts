@@ -1,170 +1,170 @@
 export const ApiGetContracargos = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/contracargos/getcontracargos',
+    'localhost-prueba/dev/contracargos/getcontracargos',
 };
 
 export const ApiCambioEstado = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/cambioestado',
+    'localhost-prueba/dev/cambioestado',
 };
 
 export const ApiGetJsonFormulario = {
   production: false,
-  apiUrl: 'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/config',
+  apiUrl: 'localhost-prueba/dev/config',
 };
 
 export const ApiPostJsonFormulario = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/disputa/createdisputacbk',
+    'localhost-prueba/dev/disputa/createdisputacbk',
 };
 
 export const ApiGetHistorialCaso = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/contracargos/historial',
+    'localhost-prueba/dev/contracargos/historial',
 };
 
 export const ApiGetIndicadores = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/getindicators',
+    'localhost-prueba/dev/getindicators',
 };
 
 export const ApiGetListaComercios = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/comercios/getall',
+    'localhost-prueba/dev/comercios/getall',
 };
 
 export const ApiGetEvicenciaPath = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/evidencias/get',
+    'localhost-prueba/dev/evidencias/get',
 };
 
 export const ApiGetGruposMcc = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/grupoMcc/getAll',
+    'localhost-prueba/dev/grupoMcc/getAll',
 };
 
 export const ApiGetGruposMccById = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/grupoMcc/getById',
+    'localhost-prueba/dev/grupoMcc/getById',
 };
 
 export const ApiGetCriteriosValidacion = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/getCriterioValidacionContracargo',
+    'localhost-prueba/dev/getCriterioValidacionContracargo',
 };
 
 export const ApiGetiCriterioValidacionById = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/criteriovalidacion/getById',
+    'localhost-prueba/dev/criteriovalidacion/getById',
 };
 
 export const ApiPostCriteriosValidacion = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/criteriovalidacion/create',
+    'localhost-prueba/dev/criteriovalidacion/create',
 };
 
 export const ApiGetConfiguracionContadores = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/configuraciones/contadores/getall',
+    'localhost-prueba/dev/configuraciones/contadores/getall',
 };
 
 export const ApiUpdateConfiguracionContadores = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/configuraciones/contadores/update',
+    'localhost-prueba/dev/configuraciones/contadores/update',
 };
 
 export const ApiPostEvicencia = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/evidencias/create',
+    'localhost-prueba/dev/evidencias/create',
 };
 
 export const ApiPostMotivo = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/createMotivoAdmin',
+    'localhost-prueba/dev/createMotivoAdmin',
 };
 
 export const ApiGetMotivos = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/getMotivosAll',
+    'localhost-prueba/dev/getMotivosAll',
 };
 
 export const ApiPutMotivoAdmin = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/updatecbkmotivobyadmin',
+    'localhost-prueba/dev/updatecbkmotivobyadmin',
 };
 
 export const ApiPutMotivoAnalista = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/updatecbkmotivobyanalista',
+    'localhost-prueba/dev/updatecbkmotivobyanalista',
 };
 
 export const ApiPostRechazarEvidencia = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/evidencias/rechazar',
+    'localhost-prueba/dev/evidencias/rechazar',
 };
 
 export const ApiPutUpdateComercios = {
   production: false,
   apiUrl:
-    'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/comercios/updateComercio',
+    'localhost-prueba/dev/comercios/updateComercio',
 };
 
 export const ApiPostAmpliarPlazoGestion = {
   production: false,
-  apiUrl: 'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/extendcbkdeadline'
+  apiUrl: 'localhost-prueba/dev/extendcbkdeadline'
 };
 
 export const ApiGetAlertasAdmin = {
   production: false,
-  apiUrl: 'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/alertaContador/administrador'
+  apiUrl: 'localhost-prueba/dev/alertaContador/administrador'
 };
 
 export const ApiGetAlertasAnalista = {
   production: false,
-  apiUrl: 'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/alertaContador/analista'
+  apiUrl: 'localhost-prueba/dev/alertaContador/analista'
 };
 
 export const ApiGetContracargosDescargaCsv = {
   production: false,
-  apiUrl: 'https://bxovphs671.execute-api.us-east-1.amazonaws.com/dev/contracargos/descarga-csv'
+  apiUrl: 'localhost-prueba/dev/contracargos/descarga-csv'
 };
 
 export const ApiKey = {
-  key: '2mK8EfI37n569IWeFta0t92ufcSOh5UA2K1SAawy'
+  key: '1231231231'
 }
 
 export const ApiAuthLogin = {
   production: false,
   apiUrl:
-    'https://kbyszv5yv2.execute-api.us-east-1.amazonaws.com/dev/login/backoffice',
+    'localhost-prueba/dev/login/backoffice',
 };
 
 export const ApiAuthRefreshTokens = {
   production: false,
   apiUrl:
-    'https://kbyszv5yv2.execute-api.us-east-1.amazonaws.com/dev/tokens/backoffice',
+    'localhost-prueba/dev/tokens/backoffice',
 };
 
 export const ApiKeyAuth = {
-  key: 'l2QSz1unnR1Q8Ke3RZZsb6aPlBo6t6gQ4DlQvSle',
+  key: '123123123123123',
 };
