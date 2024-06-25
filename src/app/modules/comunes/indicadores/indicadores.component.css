@@ -1,0 +1,66 @@
+
+
+
+
+
+/* INDICADOR */
+.indicador {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+    border-right: 1px solid #ecebeb;
+    flex-basis: calc(33.33% - 20px); /* Controla el ancho de cada subcontenedor para 3 elementos por fila (con margen de 10px) */
+    margin-bottom: 5px;
+    /* flex: 1;*/
+}
+
+.indicador:last-child {
+    /* Eliminar la línea vertical del último elemento */
+    border-right: none;
+}
+
+
+.indicador-nombre {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 21px;
+    color: var(--color-variante-secundario);
+}
+
+.indicador-cantidad {
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    color: var(--color-secundario);
+}
+
+.indicador-monto {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 17px;
+    color: var(--color-secundario);
+}
+
+.indicador-monto-positivo {
+    color: var(--color-primario);
+}
+
+.indicador-monto-negativo {
+    color: red;
+}
+
+
+
+@media(max-width: 670px){
+
+    .indicador-nombre {
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 21px;
+    }
+
+}
+

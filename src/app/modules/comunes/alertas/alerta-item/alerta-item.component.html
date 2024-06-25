@@ -1,0 +1,31 @@
+<div *ngIf="!isLoading" class="notification-card" [class.seen]="item.seen" [class.unseen]="!item.seen"
+  (click)="item.marAsSeen()" (keydown)="item.marAsSeen()">
+  <button class="ocultar-alerta-button" (click)="hideItem()">
+    <i class="fas fa-times"></i>
+  </button>
+  <div class="notification-content">
+    <div class="notification-text">
+      Tienes {{item.renderCasosStr}} en <span class="app-category">
+        {{item.renderSection}}
+      </span>
+    </div>
+  </div>
+  <div class="notification-footer">
+    <div class="time-ago ">
+      <span> {{formattedUpdatedAt || item.updatedAt}}</span>
+    </div>
+    <button (click)="manageItem()" class="boton-gestionar"> ver </button>
+  </div>
+</div>
+
+
+<div *ngIf="isLoading" class="notification-card">
+  <div class="notification-content">
+    <div class="block pulsate"></div>
+
+  </div>
+  <div class="notification-footer">
+    <div class="block-2 pulsate"></div>
+    <div class="boton-gestionar loading"> ver </div>
+  </div>
+</div>

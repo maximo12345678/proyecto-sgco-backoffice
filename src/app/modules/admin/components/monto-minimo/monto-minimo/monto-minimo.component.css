@@ -1,0 +1,9 @@
+.contenedor-monto-and-radio{
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+
+.proporcion{
+    width: 300px;
+}

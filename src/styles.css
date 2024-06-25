@@ -1,0 +1,20 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css"; 
+
+@import "./shared/styles/Z-normal-styles.css";
+
+@import "./shared/styles/inputs-styles.css";
+@import "./shared/styles/button-styles.css";
+@import "./shared/styles/tabla-styles.css";
+@import "./shared/styles/filtros-styles.css";
+
+@import "./shared/styles/modal-detail-styles.css";
+@import "./shared/styles/modal-visualizador-formulario-styles.css";
+
+@import "./app/modules/comunes/indicadores/indicadores.component.css";
+
+@import "./shared/styles/form-dinamico.css";
+
+@import "./shared/styles/submenu-configuraciones.css";
+
+@import "./shared/styles/navbar-styles.css";

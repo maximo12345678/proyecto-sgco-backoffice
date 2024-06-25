@@ -1,0 +1,59 @@
+<div *ngIf="usuarioLogueado">
+    <app-navbar [usuario]="usuario" [inputPathKeys]="availablePaths"></app-navbar>
+    <router-outlet></router-outlet>
+</div>
+
+
+
+
+<div *ngIf="!usuarioLogueado" class="contenedor-login">
+    <div class="cuadro-login">
+
+        <div>
+            <img src="../assets/logo-klap-oscuro.png" alt="Logo Klap" class="cuadro-login-logoKlap">
+        </div>
+
+        <span class="cuadro-login-titulo">Gestión de contracargos</span>
+        <span class="cuadro-login-subtitulo">Sistema de gestión de contracargos</span>
+
+        <form class="form-login" #loginForm="ngForm">
+            <div class="form-group">
+                <div class="input-container">
+                    <input placeholder="Usuario" type="text" id="usuario" name="usuario" class="input-field"
+                        [(ngModel)]="usuarioIngresado">
+                    <label for="usuario" class="input-label">Usuario</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-container">
+                    <input placeholder="Contraseña" type="password" id="password" name="password" class="input-field"
+                        [(ngModel)]="passwordIngresada">
+                    <label for="password" class="input-label">Contraseña</label>
+                </div>
+            </div>
+
+            <div *ngIf="mensajeError" class="mensaje-error">
+                <span class="error-form">{{ mensajeError }}</span>
+            </div>
+
+            <div class="posicion-boton-ingresar">
+                <button (click)="iniciarSesion()" [disabled]="loadingLogin" type="button"
+                 class="boton-gestion-caso primario" [ngClass]="{'boton-deshabilitado': loadingLogin}">Ingresar</button>
+            </div>
+        </form>
+
+
+        <div *ngIf="loadingLogin">
+            <div class="loading-wrapper">
+                <div class="loading-text">Cargando</div>
+                <div class="loading-circle circle"></div>
+                <div class="loading-circle-small circle"></div>
+            </div>
+        </div>
+
+        <div *ngIf="mensajeExito" class="mensaje-exito">
+            {{ mensajeExito }}
+        </div>
+
+    </div>
+</div>

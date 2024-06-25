@@ -1,0 +1,68 @@
+.content-config-monto{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+.spinner-wrapper{
+    display: flex;
+    height: 133px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.config-botones{
+	display: flex;
+	width: 100%;
+	gap: 14px;
+	justify-content: end;
+	padding-right: 20px;
+}
+
+.config-botones-item{
+	display: flex;
+}
+
+
+.update-finished{
+    display: flex;
+    flex-direction: column;
+    min-height: 133px;
+    margin-top: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.monto-input-wrapper{
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.campo-requerido-error{
+  color: red;
+}
+
+.monto-input-wrapper::before {
+  font-weight: 300;
+  color: gray;
+}
+
+.monto-input-wrapper.darker::before {
+  font-weight: 400;
+  color: black;
+}
+
+.form-group {
+  margin-top: 12px;
+}
+
+.boton-gestion-caso:disabled {
+  background-color: #a8a8a8;
+}
+
+.boton-gestion-caso:hover:disabled {
+  background-color: #a8a8a8;
+  color: white;
+}

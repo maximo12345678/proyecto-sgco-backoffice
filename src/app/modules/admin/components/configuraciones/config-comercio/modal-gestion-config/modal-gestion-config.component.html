@@ -1,0 +1,104 @@
+<div class="modal-container">
+  <div class="modal-content">
+    <div class="modal-content-cuerpo">
+      <div class="cuerpo-scrollable">
+
+        <div class="modal-content-cabecera">
+          <span class="modal-content-titulo">Configurar Comercio</span>
+          <button class="modal-close" (click)="closeModal()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+
+        <div class="modal-datos-contracargo-box">
+          <div class="modal-datos-contracargo-content cabecera">
+            <div *ngIf="comercio" class="modal-datos-contracargo-content-cabecera">
+              <div class="item">
+                <div class="cabecera-nombre">Comercio</div>
+                <div class="cabecera-valor">
+                  {{nombreComercio ? nombreComercio : comercio.nombre}}
+                </div>
+              </div>
+              <div class="item">
+                <div class="cabecera-estado">{{ rutComercio ? rutComercio : 'ID: '+comercio.id}}</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div *ngIf="!loadingUpdate && !mensajeResultado" class="content-config-monto">
+          <div class="label-input-form-motivos">Monto Mínimo *</div>
+          <div class="monto-input-wrapper" [class.darker]="!!montoInput">
+            <input type="text" class="monto-input" placeholder="Monto minimo" [(ngModel)]="montoInput" name="montoInput"
+              #monInput="ngModel" required>
+            <div *ngIf="isInputInvalid" class="monto-error-message">Solo valores enteros no negativos.</div>
+            <div *ngIf="montoInput === ''" class="campo-requerido-error"> * Campo obligatorio</div>
+          </div>
+          <div class="form-group" [attr.inert]="null">
+            <div>
+              <label class="label-input-form-motivos" for="option3">¿Débito inicial activado? </label>
+            </div>
+            <div class="form-motivos-opciones-radio">
+              <div class="form-motivos-opciones-radio-element">
+                <label for="option3">
+                  <input type="radio" id="option3" name="option2" [(ngModel)]="debitoInicialRadio" required
+                    #debInicial="ngModel" [value]="true">
+                  <span class="checkmark"></span>
+                  <span>Si</span>
+                </label>
+              </div>
+              <div class="form-motivos-opciones-radio-element">
+                <label for="option4">
+                  <input type="radio" id="option4" name="option2" [(ngModel)]="debitoInicialRadio" required
+                    #debInicial="ngModel" [value]="false">
+                  <span class="checkmark"></span>
+                  <span>No</span>
+                </label>
+              </div>
+              <div *ngIf="debInicial.invalid " class="validation-alert">
+                <div *ngIf="debInicial.errors?.['required']"> * Campo requerido</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="!loadingUpdate && !mensajeResultado" class="config-botones">
+        <div class="config-botones-item elemento-ocultable">
+          <button (click)="closeModal()" class="boton-cancelar ">
+            Cancelar
+          </button>
+        </div>
+        <div class="config-botones-item">
+          <button (click)="onClickGuardar()" class="boton-gestion-caso primario" [disabled]="guardarDisabled">
+            Guardar
+          </button>
+        </div>
+      </div>
+
+      <div *ngIf="!loadingUpdate && mensajeResultado" class="update-finished mensaje-satisfactorio">
+        <div class="mensaje-satisfactorio-icono">
+          <i class="fas fa-check"></i>
+        </div>
+        <div class="mensaje-satisfactorio-texto">
+          {{ mensajeResultado}}
+        </div>
+        <div class="espacio-abajo"></div>
+        <div class="config-botones-item">
+          <button (click)="closeModal()" class="boton-guardar">
+            Cerrar
+          </button>
+        </div>
+      </div>
+
+
+      <div *ngIf="loadingUpdate" class="spinner-wrapper">
+        <div class="spinner"></div>
+      </div>
+
+
+      <div class="espacio-abajo"></div>
+
+    </div>
+  </div>

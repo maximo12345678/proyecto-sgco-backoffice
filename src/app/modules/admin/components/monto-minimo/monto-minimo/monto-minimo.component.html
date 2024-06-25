@@ -1,0 +1,70 @@
+<div class="contenedor-config-comercio">
+    <h3 class="title">Configurar Monto minimo</h3>
+
+    <div *ngFor="let configuracion of configuraciones; let i = index" class="configuracion">
+
+        <div class="contenedor-configuracion-debito-inicial">
+
+            <div class="contenedor-configuracion-debito-inicial-element">
+                <div class="contenedor-lista-desplegable">
+                    <label class="title-input">Seleciona un subcomercio</label>
+                    <div class="lista-desplegable" [class.open]="listaDesplegable">
+                        <button class="lista-desplegable-button proporcion" (click)="listaDesplegable = !listaDesplegable">
+                            Seleccionar Subcomercio <i class="fas fa-chevron-down" [class.rotate]="listaDesplegable"
+                                [class.change-color]="listaDesplegable"></i>
+                        </button>
+                        <ul class="lista-desplegable-list proporcion">
+                            <li class="lista-desplegable-item">Comercio 1</li>
+                            <li class="lista-desplegable-item">Comercio 2</li>
+                            <li class="lista-desplegable-item">Comercio 3</li>
+                            <li class="lista-desplegable-item">Comercio 4</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contenedor-configuracion-debito-inicial-element">
+
+                <div class="contenedor-monto-and-radio">
+                    <div class="input-container">
+                        <input placeholder="Ingrese monto" type="number" id="number" class="input-field">
+                        <label for="number" class="input-label">Monto minimo</label>
+                    </div>
+
+                    <div class="options-radio">
+                        <label for="option1" class="options-radio-element">
+                            <input type="radio" id="option1" name="optionRadio" [(ngModel)]="optionRadio" value="Si">
+                            <span class="checkmark"></span>
+                            <span>Establecer monto minimo por defecto</span>
+                        </label>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+
+            <button (click)="eliminarConfiguracion(i)" class="button-delete-config"><i class="fas fa-trash"></i>
+                Eliminar</button>
+
+        </div>
+
+
+    </div>
+
+    <button (click)="agregarConfiguracion()" class="button-add-nueva-config">
+        <i class="fas fa-plus-circle"></i> AGREGAR NUEVA CONFIGURACION
+    </button>
+
+
+    <div class="config-botones">
+        <div class="config-botones-item">
+            <button class="boton-cancelar">Cancelar</button>
+        </div>
+        <div class="config-botones-item">
+            <button class="boton-gestion-caso primario">Guardar cambios</button>
+        </div>
+    </div>
+</div>

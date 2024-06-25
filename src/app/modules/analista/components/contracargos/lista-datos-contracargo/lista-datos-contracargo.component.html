@@ -1,0 +1,98 @@
+<div class="modal-datos-contracargo-content">
+
+  <div class="lista-datos">
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">ID Marca</div>
+        <div class="item-valor">{{casoSeleccionado.marcaId}}</div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">Comercio</div>
+        <div class="item-valor">{{casoSeleccionado.subcomercio}}</div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">Motivo</div>
+        <div class="item-valor">{{casoSeleccionado.motivoCodigo}} -
+          {{casoSeleccionado.motivoDesc}}</div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">Fecha Transacción</div>
+        <div class="item-valor">{{formatearFecha(casoSeleccionado.fechaTransaccion)}}</div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">Monto CBK</div>
+        <div class="item-valor">$ {{formatearMonto(casoSeleccionado.montoCbk)}} CLP</div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">Pago Comercio</div>
+        <div class="item-valor">$ {{formatearMonto(casoSeleccionado.pagoComercio)}} CLP
+        </div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">Rut</div>
+        <div class="item-valor">{{casoSeleccionado.rutComerio}}
+        </div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">Terminal</div>
+        <div class="item-valor">{{casoSeleccionado.terminalNumber}}
+        </div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">Monto Venta</div>
+        <div class="item-valor">$ {{formatearMonto(casoSeleccionado.montoVenta)}} CLP
+        </div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">Numero Tarjeta</div>
+        <div class="item-valor">{{casoSeleccionado.numeroTarjeta}}
+        </div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">Codigo MC</div>
+        <div class="item-valor">{{casoSeleccionado.codigoMC}}
+        </div>
+      </div>
+    </div>
+
+    <div class="lista-datos-elemento">
+      <div class="item">
+        <div class="item-nombre">ARN</div>
+        <div class="item-valor">{{casoSeleccionado.arn}}
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,101 @@
+.component-container {
+  position: relative;
+}
+
+.toolbar-icono {
+  color: #002b49;
+  position: relative;
+  margin-left: 8px;
+}
+
+.bell-dot {
+  position: absolute;
+  top: 2px;
+  left: 8px;
+  width: 8px;
+  height: 8px;
+  background-color: var(--color-secundario);
+  border-radius: 50%;
+  border: 1px solid #e1f0fb65;
+}
+.bell-dot.unseen {
+  background-color: red;
+}
+
+.icon-container {
+  width: 30px;
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.icon-container:hover {
+  background-color: rgb(146, 163, 163);
+}
+
+.modal-notificaciones {
+  position: absolute;
+  min-height: 200px;
+  max-height: 400px;
+  left: -410px;
+  background-color: #f8f2f2;
+  width: 460px;
+  border-radius: 8px;
+  padding: 8px;
+  box-shadow: -8px 8px 20px rgba(0, 0, 0, 0.1);
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+.section-title {
+  padding-bottom: 12px;
+}
+
+.notification-list {
+  margin-bottom: 18px;
+}
+
+.button-end {
+  position: sticky;
+  display: flex;
+  width: 100%;
+  justify-content: end;
+}
+
+.mark-all-as-read-msg {
+  margin-top: 12px;
+  margin-bottom: 4px;
+  width: 40%;
+  text-align: center;
+  font-size: small;
+  border-radius: 5px;
+}
+
+.sin-alertas {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.check-sin-alertas {
+  font-size: 42px;
+  color: var(--color-primario);
+  margin-right: 18px;
+  margin-top: -5px;
+}
+
+.mensaje-sin-alertas {
+  display: flex;
+  flex-direction: row;
+}
+
+.boton-entendido-sin-alertas {
+  background-color: var(--color-primario);
+  padding: 6px 16px;
+  margin-top: 20px;
+}

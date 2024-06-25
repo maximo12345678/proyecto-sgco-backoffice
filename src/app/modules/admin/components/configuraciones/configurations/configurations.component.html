@@ -1,0 +1,36 @@
+<div class="configuraciones-pagina">
+  <div class="sidebar-configuraciones">
+    <h2 class="sidebar-configuraciones-titulo">Configuraciones generales</h2>
+
+    <div class="sidebar-configuraciones-menu">
+      <div
+        class="sidebar-configuraciones-menu-item"
+        *ngFor="let item of botonesConfig"
+      >
+        <button
+          [ngClass]="{
+            'sidebar-configuraciones-menu-item-button': true,
+            seleccionado: botonMenuSeleccionado === item.botonNumber
+          }"
+          (click)="seleccionarBotonMenu(item.botonNumber)"
+        >
+          <span>{{ item.text }}</span>
+          <i
+            *ngIf="botonMenuSeleccionado === item.botonNumber"
+            class="fas fa-chevron-right icono-seleccionado"
+          ></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor-configuraciones" [style]="botonMenuSeleccionado === 1 ? 'width: 100%; padding-bottom:20px;' : ''">
+    <app-config-comercio *ngIf="botonMenuSeleccionado === 1" />
+
+    <app-config-marcas
+      *ngIf="botonMenuSeleccionado > 1"
+      [marcaId]="marcaId"
+      [marcaName]="marcaName"
+    />
+  </div>
+</div>

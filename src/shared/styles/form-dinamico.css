@@ -1,0 +1,108 @@
+
+
+
+
+
+
+/*Contenedor botones abajo*/
+.config-botones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: auto;
+    align-self: flex-end; /* Alinea los botones a la derecha */
+} 
+
+.config-botones-item {
+    padding: 0px 12px;
+}
+
+
+
+/* Formulario */
+.formulario-config{
+    margin-top: 40px;
+}
+
+.title-input{
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+
+
+
+
+
+/* BUTONES */
+.button-add-nueva-config{
+    margin-top: 20px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    background-color: white;
+    border: none;
+    color: var(--color-secundario);
+}
+
+.button-delete-config{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 21px;
+    background-color: white;
+    border: none;
+    color: var(--color-secundario);
+
+    align-self: flex-end; /* Alinea los botones a la derecha */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*para las opciones dinamicas de las configuraciones*/
+
+/* CONTENEDOR */
+.contenedor-config-comercio {
+    margin: 15px 0px 0px 40px;
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start; 
+    height: 90vh; /* El contenedor ocupa toda la pantalla vertical */
+}
+
+
+
+.contenedor-configuracion-debito-inicial{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid var(--color-6);
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.contenedor-configuracion-debito-inicial-element{
+    margin-left: 20px;
+}
+
+
+.contenedor-lista-desplegable{
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+}

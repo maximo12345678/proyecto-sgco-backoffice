@@ -1,0 +1,14 @@
+.herramientas-content-element {
+    margin-right: 25px;
+    /* flex: 1; */
+}
+
+.full-width{
+  width: 100%;
+}
+
+@media(max-width: 1200px){
+    #buscador-grande{
+        display: none;
+    }
+}

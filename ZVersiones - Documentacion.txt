@@ -1,0 +1,2167 @@
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+VERSIONES: (comando ng version)
+
+Npm: v9.5.1
+
+Node: v18.16.0
+
+Angular CLI: v16.0.1
+
+Typescript: v5.0.4
+ 
+OS: win32 x64
+
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.1600.1 (cli-only)
+@angular-devkit/core         16.0.1 (cli-only)
+@angular-devkit/schematics   16.0.1 (cli-only)
+@schematics/angular          16.0.1 (cli-only)
+typescript                   5.0.4
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+COMANDOS:
+
+ng new app1  = crear nuevo proyecto  ( preguntas: routing / yes. opcion diseño / css. )
+ng serve  = ejecutarlo
+ng generate component app1 = crear componente
+ng generate service app1 = crear servicio
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+DOCUMENTACION PROYECTO;
+
+
+Estimacion proyecto: 
+https://bstcorp.sharepoint.com/:x:/s/BSTTI739-Devs/EZjVOpIgMA1PkIMJJQwqD0kB-YkLMqc6eu_GPDfF__ZV2Q?email=myanez%40bst.cl&e=4%3APyaVeK&at=9&CID=5bd5e502-41ff-504d-e23a-3ebdffd8503d
+
+
+Diseño:
+https://www.figma.com/file/FWsmyU8YgUiInw8vRMpy63/Dise%C3%B1o---Plataforma-CBK?type=design&node-id=136-8415&t=LRymrJQfZoVScXwj-0
+
+
+Componentes Klap:
+https://verticaldesa.mcdesaqa.cl/klap-theme/index.html
+
+
+Material UI:
+https://material.angular.io/components/table/overview
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+HERRAMIENTAS:
+
+
+Validar formularios angular:
+https://stackoverflow.com/questions/48037287/angular-5-form-validation-required-not-working
+https://www.youtube.com/watch?v=8z-YjBVqEG0
+
+
+Curso conceptos angular:
+https://www.udemy.com/course/componentes-angular-101/learn/lecture/6955824#overview
+
+
+Microfront:
+https://codigoencasa.com/tu-primer-microfrontend-de-angular/
+
+
+Login COGINTO:
+https://www.youtube.com/watch?v=U86RDbc6nIA&t=2s
+
+
+Fake Api:
+
+
+Visualizador de imageneS: 
+https://pspdfkit.com/blog/2023/how-to-build-an-angular-image-viewer-with-viewerjs/
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------
+ERROR: ng : No se puede cargar el archivo C:\Users\maxin\AppData\Roaming\npm\ng.ps1 porque la ejecución de scripts está 
+deshabilitada en este sistema. Para obtener más información, consulta el tema about_Execution_Policies en
+https:/go.microsoft.com/fwlink/?LinkID=135170.
+
+Solucion, ejecutar una consola powershell como administrador 
+
+Get-ExecutionPolicy -> con este comando vemos si esta restringido.
+
+Set-ExecutionPolicy RemoteSigned -> para cambiar la politica.
+
+Si se te solicita confirmación, escribe "Y" y presiona Enter.
+------------------------------------------------------------------------------------------------------------
+
+
+
+// // Funcion que usamos para poder obtener un objeto iterable del JSON para recorrerlo en el NGFOR.
+// obtenerClavesDeObjeto(objeto: any) {
+//   return Object.keys(objeto);
+// }
+
+
+
+const AUX_INDICADORES = [
+  {
+    id: 1,
+    nombre: "CASOS ACEPTADOS",
+    cantidad: 2,
+    monto: "$123.560"
+  },
+  {
+    id: 2,
+    nombre: "CASOS NO GESTIONADOS",
+    cantidad: 5,
+    monto: "$670.221"
+  },
+  {
+    id: 3,
+    nombre: "CASOS GANADOS",
+    cantidad: 2,
+    monto: "$190.785"
+  },
+  {
+    id: 4,
+    nombre: "CASOS PERDIDOS",
+    cantidad: 1,
+    monto: "$53.980"
+  },
+  {
+    id: 5,
+    nombre: "CASOS EN REVISION",
+    cantidad: 0,
+    monto: "$0"
+  },
+  {
+    id: 6,
+    nombre: "CASOS POR DISPUTAR",
+    cantidad: 8,
+    monto: "$1.365.990"
+  }
+];
+
+
+const reees = [
+  {    
+    caso: '777897',
+    comercio: '',
+    diasDesdeNotificacion: 10,
+    diasParaCierre: 8,
+    estado: 'Por Disputar',
+    estadoId: 2,
+    marca: 'MASTERCARD',
+    marcaId: '1',
+    montoCbk: 85885,
+    montoTrx: 222018,
+    motivoDesc: 'Fraude',
+    motivoId: '4837',
+    recepcion: '09-11-2023',
+    subcomercio: 'EBANX CHILE LIMITADA',
+  },
+  {    
+    caso: '777977',
+    comercio: '',
+    diasDesdeNotificacion: 10,
+    diasParaCierre: 8,
+    estado: 'Por Disputar',
+    estadoId: 2,
+    marca: 'MASTERCARD',
+    marcaId: '1',
+    montoCbk: 85942,
+    montoTrx: 222018,
+    motivoDesc: 'Fraude',
+    motivoId: '4837',
+    recepcion: '09-11-2023',
+    subcomercio: 'EBANX CHILE LIMITADA',
+  },
+  {    
+    caso: '777978',
+    comercio: '',
+    diasDesdeNotificacion: 10,
+    diasParaCierre: 8,
+    estado: 'Por Disputar',
+    estadoId: 2,
+    marca: 'MASTERCARD',
+    marcaId: '1',
+    montoCbk: 86200,
+    montoTrx: 222018,
+    motivoDesc: 'Fraude',
+    motivoId: '4837',
+    recepcion: '09-11-2023',
+    subcomercio: 'DELIVERY HERO E-COMMERCE CHILE SPA',
+  },
+  {    
+    caso: '777980',
+    comercio: '',
+    diasDesdeNotificacion: 10,
+    diasParaCierre: 8,
+    estado: 'Por Disputar',
+    estadoId: 2,
+    marca: 'MASTERCARD',
+    marcaId: '1',
+    montoCbk: 14999,
+    montoTrx: 222018,
+    motivoDesc: 'Fraude',
+    motivoId: '4837',
+    recepcion: '09-11-2023',
+    subcomercio: 'DLOCAL CHILE SPA',
+  },
+  {    
+    caso: '777981',
+    comercio: '',
+    diasDesdeNotificacion: 10,
+    diasParaCierre: 8,
+    estado: 'Por Disputar',
+    estadoId: 2,
+    marca: 'MASTERCARD',
+    marcaId: '1',
+    montoCbk: 25780,
+    montoTrx: 222018,
+    motivoDesc: 'Fraude',
+    motivoId: '4837',
+    recepcion: '09-11-2023',
+    subcomercio: 'MERCADOPAGO S A',
+  },
+  {    
+    caso: '777983',
+    comercio: '',
+    diasDesdeNotificacion: 10,
+    diasParaCierre: 8,
+    estado: 'Por Disputar',
+    estadoId: 2,
+    marca: 'MASTERCARD',
+    marcaId: '1',
+    montoCbk: 25000,
+    montoTrx: 222018,
+    motivoDesc: 'Fraude',
+    motivoId: '4837',
+    recepcion: '09-11-2023',
+    subcomercio: 'MERCADOPAGO S A',
+  },
+  {    
+    caso: '777984',
+    comercio: '',
+    diasDesdeNotificacion: 10,
+    diasParaCierre: 8,
+    estado: 'Por Disputar',
+    estadoId: 2,
+    marca: 'MASTERCARD',
+    marcaId: '1',
+    montoCbk: 4990,
+    montoTrx: 222018,
+    motivoDesc: 'Fraude',
+    motivoId: '4837',
+    recepcion: '09-11-2023',
+    subcomercio: 'DLOCAL CHILE SPA',
+  },
+  {    
+    caso: '777985',
+    comercio: '',
+    diasDesdeNotificacion: 10,
+    diasParaCierre: 8,
+    estado: 'Por Disputar',
+    estadoId: 2,
+    marca: 'MASTERCARD',
+    marcaId: '1',
+    montoCbk: 4990,
+    montoTrx: 222018,
+    motivoDesc: 'Fraude',
+    motivoId: '4837',
+    recepcion: '09-11-2023',
+    subcomercio: 'DLOCAL CHILE SPA',
+  },
+  {    
+    caso: '777988',
+    comercio: '',
+    diasDesdeNotificacion: 10,
+    diasParaCierre: 8,
+    estado: 'Por Disputar',
+    estadoId: 2,
+    marca: 'MASTERCARD',
+    marcaId: '1',
+    montoCbk: 20070,
+    montoTrx: 222018,
+    motivoDesc: 'Fraude',
+    motivoId: '4837',
+    recepcion: '09-11-2023',
+    subcomercio: 'DLOCAL CHILE SPA',
+  },
+  
+]
+
+// funcion auxiliar para elimninar registro seleccionado de la tabla en caso de poner datos fijos
+eliminarRegistro(){
+  this.contracargos = this.contracargos.filter(registro => registro.caso !== this.casoSeleccionado.caso);
+  this.limpiezaDatosCasoSeleccionado()
+}
+
+
+
+"filtro-2": {
+    "nombre": "Etapa",
+    "id": 2,
+    "opciones": {
+        "opcion-1": {
+            "value": "Recepcion",
+            "id": 1,
+            "marca_id": 1
+        },
+        "opcion-2": {
+            "value": "Contracargo",
+            "id": 2,
+            "marca_id": 1
+        },
+        "opcion-3": {
+            "value": "Disputa",
+            "id": 3,
+            "marca_id": 1
+        },
+        "opcion-4": {
+            "value": "Pre-arbitraje",
+            "id": 4,
+            "marca_id": 1
+        },
+        "opcion-5": {
+            "value": "Arbitraje",
+            "id": 5,
+            "marca_id": 1
+        },
+        "opcion-6": {
+            "value": "Resolucion",
+            "id": 6,
+            "marca_id": 1
+        },
+        "opcion-7": {
+            "value": "Apelacion",
+            "id": 7,
+            "marca_id": 1
+        },
+        "opcion-8": {
+            "value": "Contracargo",
+            "id": 9,
+            "marca_id": 2
+        },
+        "opcion-9": {
+            "value": "Pre-arbitraje",
+            "id": 10,
+            "marca_id": 2
+        },
+        "opcion-10": {
+            "value": "Arbitraje",
+            "id": 11,
+            "marca_id": 2
+        },
+        "opcion-11": {
+            "value": "Resolucion",
+            "id": 12,
+            "marca_id": 2
+        },
+        "opcion-12": {
+            "value": "Apelacion",
+            "id": 13,
+            "marca_id": 2
+        }
+    }
+},
+"filtro-3": {
+    "nombre": "Estado",
+    "id": 3,
+    "opciones": {
+        "opcion-1": {
+            "value": "Recepcion",
+            "id": 1,
+            "marca_id": 1
+        },
+        "opcion-2": {
+            "value": "Contracargo",
+            "id": 2,
+            "marca_id": 1
+        }
+    }
+},
+"filtro-4": {
+    "nombre": "Rango de fecha",
+    "id": 4,
+    "opciones": {}
+}
+
+
+
+
+  this.historialCaso = [
+          {
+            estado: "Recibido",
+            estadoDescripcion : "Contracargo nuevo",
+            etapa: "Contracargo",
+            fechaContracargo: "2023-12-01",
+            usuario: "Sistema SGCO"
+          },
+          {
+            estado: "Notificado",
+            estadoDescripcion : "Contracargo Notificado al Comercio",
+            etapa: "Notificado",
+            fechaContracargo: "2023-11-21",
+            usuario: "Sistema SGCO"
+          },
+          {
+            estado: "Recibido",
+            estadoDescripcion : "Contracargo nuevo",
+            etapa: "Contracargo",
+            fechaContracargo: "2023-11-30",
+            usuario: "Sistema SGCO"
+          },
+          {
+            estado: "Recibido",
+            estadoDescripcion : "Contracargo nuevo",
+            etapa: "Contracargo",
+            fechaContracargo: "2023-12-14",
+            usuario: "Sistema SGCO"
+          }
+        ]    
+
+
+
+// Funcion para ordenar el historial del caso de mayor a menor por fecha
+ordenarHistorialCaso() {
+  this.historialCaso.sort((a: any, b: any) => {
+    const fechaA = new Date(a.fechaContracargo).getTime();
+    const fechaB = new Date(b.fechaContracargo).getTime();
+
+    return fechaB - fechaA; // Ordenar de mayor a menor (de más reciente a más antigua)
+  });
+
+}
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Input Bloque Prearbitraje visa 1:
+
+{
+  "id": "34",
+  "label": "Attach Document",
+  "tipo": "bloque",
+  "dependencia": "null",
+  "selected_value": [],
+  "placeholder": "",
+  "validacion": {
+      "requerido": "true"
+  },
+  "options": "null",
+  "campos_bloque": [
+      {
+          "id": "34.1",
+          "label": "Attach Document",
+          "tipo": "file",
+          "dependencia": {
+              "id": "34",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": {
+              "requerido": "true"
+          },
+          "selected_value": "",
+          "options": []
+      },
+      {
+          "id": "34.2",
+          "label": "Select the location of the document(s) to be attached to this questionnaire",
+          "tipo": "radio",
+          "dependencia": {
+              "id": "34",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": {
+              "requerido": "true"
+          },
+          "selected_value": "",
+          "options": [
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Network or Local Hard Drive",
+                  "opcion_id": "34.2.1"
+              }
+          ]
+      },
+      {
+          "id": "34.3",
+          "label": "Document Notes",
+          "tipo": "text",
+          "dependencia": {
+              "id": "34",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": {
+              "requerido": "true"
+          },
+          "selected_value": "",
+          "options": []
+      },
+      {
+          "id": "34.4",
+          "label": "Document Type",
+          "tipo": "checkbox",
+          "dependencia": {
+              "id": "34",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": {
+              "requerido": "true"
+          },
+          "selected_value": {
+              "input": [false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false],
+              "output": []
+          },
+          "options": [
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Affidavit of Fraud",
+                  "opcion_id": "34.4.1"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Authorization Record",
+                  "opcion_id": "34.4.2"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Bank Statement",
+                  "opcion_id": "34.4.3"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Cancelled Check",
+                  "opcion_id": "34.4.4"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Cardholder Letter",
+                  "opcion_id": "34.4.5"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Credit Voucher",
+                  "opcion_id": "34.4.6"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Fullfillment",
+                  "opcion_id": "34.4.7"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Issuer Certification",
+                  "opcion_id": "34.4.8"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Merchant Letter",
+                  "opcion_id": "34.4.9"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Other",
+                  "opcion_id": "34.4.10"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Proof of Delivery",
+                  "opcion_id": "34.4.11"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Sales Draft",
+                  "opcion_id": "34.4.12"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Second Opinion",
+                  "opcion_id": "34.4.13"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Shipping Receipt",
+                  "opcion_id": "34.4.14"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "T & E Folio",
+                  "opcion_id": "34.4.15"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Transaction Reveipt",
+                  "opcion_id": "34.4.16"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Updated Cardholder Letter",
+                  "opcion_id": "34.4.17"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Updated Merchant Letter",
+                  "opcion_id": "34.4.18"
+              }
+          ]
+      }
+  ]
+},
+
+
+{
+  "id": "37",
+  "tipo": "bloque",
+  "label": "Phone",
+  "dependencia": "null",
+  "placeholder": "null",
+  "validacion": "null",
+  "selected_value": "",
+  "options": [],
+  "campos_bloque": [
+      {
+          "id": "37.1",
+          "label": "",
+          "tipo": "text",
+          "dependencia": {
+              "id": "37",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": "null",
+          "selected_value": "",
+          "options": []
+      },
+      {
+          "id": "37.2",
+          "label": "",
+          "tipo": "text",
+          "dependencia": {
+              "id": "37",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": "null",
+          "selected_value": "",
+          "options": []
+      }
+  ]
+},
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Input Bloque Prearbitraje visa 2:
+
+
+ {
+  "id": "3",
+  "label": "Attach Document",
+  "tipo": "bloque",
+  "dependencia": "null",
+  "selected_value": [],
+  "placeholder": "",
+  "validacion": {
+      "requerido": "true"
+  },
+  "options": "null",
+  "campos_bloque": [
+      {
+          "id": "3.2",
+          "label": "Attach Document",
+          "tipo": "radio",
+          "dependencia": {
+              "id": "3",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": {
+              "requerido": "true"
+          },
+          "selected_value": "",
+          "options": [
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Network or Local Hard Drive",
+                  "opcion_id": "3.2.1"
+              }
+          ]
+      },
+      {
+          "id": "3.3",
+          "label": "Document Notes",
+          "tipo": "text",
+          "dependencia": {
+              "id": "3",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": {
+              "requerido": "true"
+          },
+          "selected_value": "",
+          "options": []
+      },
+      {
+          "id": "3.4",
+          "label": "Document Type",
+          "tipo": "select",
+          "dependencia": {
+              "id": "3",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": {
+              "requerido": "true"
+          },
+          "selected_value": "",
+          "options": [
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Affidavit of Fraud",
+                  "opcion_id": "3.4.1"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Authorization Record",
+                  "opcion_id": "3.4.2"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Bank Statement",
+                  "opcion_id": "3.4.3"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Cancelled Check",
+                  "opcion_id": "3.4.4"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Cardholder Letter",
+                  "opcion_id": "3.4.5"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Credit Voucher",
+                  "opcion_id": "3.4.6"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Fullfillment",
+                  "opcion_id": "3.4.7"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Issuer Certification",
+                  "opcion_id": "3.4.8"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Merchant Letter",
+                  "opcion_id": "3.4.9"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Other",
+                  "opcion_id": "3.4.10"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Proof of Delivery",
+                  "opcion_id": "3.4.11"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Sales Draft",
+                  "opcion_id": "3.4.12"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Second Opinion",
+                  "opcion_id": "3.4.13"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Shipping Receipt",
+                  "opcion_id": "3.4.14"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "T & E Folio",
+                  "opcion_id": "3.4.15"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Transaction Reveipt",
+                  "opcion_id": "3.4.16"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Updated Cardholder Letter",
+                  "opcion_id": "3.4.16"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Updated Merchant Letter",
+                  "opcion_id": "3.4.16"
+              }
+          ]
+      }
+  ]
+},
+
+
+{
+  "id": "6",
+  "tipo": "bloque",
+  "label": "Phone",
+  "dependencia": "null",
+  "placeholder": "null",
+  "validacion": "null",
+  "selected_value": "",
+  "options": [],
+  "campos_bloque": [
+      {
+          "id": "6.1",
+          "label": "",
+          "tipo": "text",
+          "dependencia": {
+              "id": "6",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": "null",
+          "selected_value": "",
+          "options": []
+      },
+      {
+          "id": "6.2",
+          "label": "",
+          "tipo": "text",
+          "dependencia": {
+              "id": "6",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": "null",
+          "selected_value": "",
+          "options": []
+      }
+  ]
+},
+
+
+
+{
+  "id": "10",
+  "tipo": "bloque",
+  "label": "Phone",
+  "dependencia": "null",
+  "placeholder": "null",
+  "validacion": "null",
+  "selected_value": "",
+  "options": [],
+  "campos_bloque": [
+      {
+          "id": "10.1",
+          "label": "",
+          "tipo": "text",
+          "dependencia": {
+              "id": "10",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": "null",
+          "selected_value": "",
+          "options": []
+      },
+      {
+          "id": "10.2",
+          "label": "",
+          "tipo": "text",
+          "dependencia": {
+              "id": "10",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": "null",
+          "selected_value": "",
+          "options": [
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "Network or Local Hard Drive",
+                  "opcion_id": "10.2.1"
+              }
+          ]
+      }
+  ]
+},
+
+
+
+{
+  "id": "17",
+  "tipo": "bloque",
+  "label": "Credit Amout",
+  "dependencia": "null",
+  "placeholder": "null",
+  "validacion": "null",
+  "selected_value": "",
+  "options": [],
+  "campos_bloque": [
+      {
+          "id": "17.1",
+          "label": "monto",
+          "tipo": "text",
+          "dependencia": {
+              "id": "17",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": {
+              "requerido": "true",
+              "numerico": "true"
+          },
+          "selected_value": "",
+          "options": []
+      },
+      {
+          "id": "17.2",
+          "label": "divisa",
+          "tipo": "select",
+          "dependencia": {
+              "id": "6",
+              "tipo": "bloque"
+          },
+          "placeholder": "",
+          "validacion": {
+              "requerido": "true"
+          },
+          "selected_value": "",
+          "options": [
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CLP",
+                  "opcion_id": "17.2.1"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "AFGHANI - 004",
+                  "opcion_id": "17.2.1"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "AFGHANI - 971",
+                  "opcion_id": "17.2.2"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ALBANIAN LEK - 008",
+                  "opcion_id": "17.2.3"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ALGERIAN DINAR - 012",
+                  "opcion_id": "17.2.4"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ANGOLAN KWANZA - 973",
+                  "opcion_id": "17.2.5"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ANGOLAN NEW KWANZA - 024",
+                  "opcion_id": "17.2.6"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ARGENTINE PESO - 032",
+                  "opcion_id": "17.2.7"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ARMENIAN DRAM - 051",
+                  "opcion_id": "17.2.8"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ARUBAN GUILDER - 533",
+                  "opcion_id": "17.2.9"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "AUSTRALIAN DOLLAR - 036",
+                  "opcion_id": "17.2.10"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "AUSTRIAN SHILLING - 040",
+                  "opcion_id": "17.2.11"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "AZERBAIJAN MANAT - 944",
+                  "opcion_id": "17.2.12"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "AZERBAIJANIAN MANAT - 031",
+                  "opcion_id": "17.2.13"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BAHAMIAN DOLLAR - 044",
+                  "opcion_id": "17.2.14"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BAHRAINI DINAR - 048",
+                  "opcion_id": "17.2.15"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BANGLADESH TAKA - 050",
+                  "opcion_id": "17.2.16"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BARBADOS DOLLAR - 052",
+                  "opcion_id": "17.2.17"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BELARUSSIAN RUBLE - 112",
+                  "opcion_id": "17.2.18"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BELARUSSIAN RUBLE - 933",
+                  "opcion_id": "17.2.19"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BELARUSSIAN RUBLE - 974",
+                  "opcion_id": "17.2.20"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BELGIAN FRANC - 056",
+                  "opcion_id": "17.2.21"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BELIZE DOLLAR - 084",
+                  "opcion_id": "17.2.22"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BERMUDIAN DOLLAR - 060",
+                  "opcion_id": "17.2.23"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BHUTANESE NGULTRUM - 064",
+                  "opcion_id": "17.2.24"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BOLIVAR - 928",
+                  "opcion_id": "17.2.25"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BOLIVAR - 937",
+                  "opcion_id": "17.2.26"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BOLIVIAN BOLIVIANO - 068",
+                  "opcion_id": "17.2.27"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BOSNIAN CONVERTIBLE - 977",
+                  "opcion_id": "17.2.28"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BOSNIAN DINAR - 070",
+                  "opcion_id": "17.2.29"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BOTSWANA PULA - 072",
+                  "opcion_id": "17.2.30"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BRAZILIAN CRUZEIRO - 076",
+                  "opcion_id": "17.2.31"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BRAZILIAN REAL - 986",
+                  "opcion_id": "17.2.32"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BRUNEI DOLLAR - 096",
+                  "opcion_id": "17.2.33"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BULGARIAN LEV - 100",
+                  "opcion_id": "17.2.34"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BULGARIAN LEV - 975",
+                  "opcion_id": "17.2.35"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "BURUNDI FRANC - 108",
+                  "opcion_id": "17.2.36"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CAMBODIA RIEL - 116",
+                  "opcion_id": "17.2.37"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CANADIAN DOLLAR - 124",
+                  "opcion_id": "17.2.38"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CAPE VERDE ESCUDO - 132",
+                  "opcion_id": "17.2.39"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CAYMAN IS. DOLLAR - 136",
+                  "opcion_id": "17.2.40"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CFA FRANC (BCEAO) - 952",
+                  "opcion_id": "17.2.41"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CFA FRANC (BEAC) - 950",
+                  "opcion_id": "17.2.42"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CFP FRANC - 953",
+                  "opcion_id": "17.2.43"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CHILEAN PESO - 152",
+                  "opcion_id": "17.2.44"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "COLOMBIAN PESO - 170",
+                  "opcion_id": "17.2.45"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "COMORO FRANC - 174",
+                  "opcion_id": "17.2.46"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CONGOLAIS FRANC - 976",
+                  "opcion_id": "17.2.47"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "COSTA RICAN COLON - 188",
+                  "opcion_id": "17.2.48"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CROATIAN KUNA - 191",
+                  "opcion_id": "17.2.49"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CUBAN PESO - 192",
+                  "opcion_id": "17.2.50"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CYPRUS POUND - 196",
+                  "opcion_id": "17.2.51"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "CZECH KORUNA - 203",
+                  "opcion_id": "17.2.52"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "DANISH KRONE - 208",
+                  "opcion_id": "17.2.53"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "DEUTSCHE MARK - 280",
+                  "opcion_id": "17.2.54"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "DIEM - 999",
+                  "opcion_id": "17.2.55"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "DJIBOUTI FRANC - 262",
+                  "opcion_id": "17.2.56"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "DOBRA - 930",
+                  "opcion_id": "17.2.57"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "DOMINICAN PESO - 214",
+                  "opcion_id": "17.2.58"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "E. CARIBBEAN DOLLAR - 951",
+                  "opcion_id": "17.2.59"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ECUADOR SUCRE - 218",
+                  "opcion_id": "17.2.60"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "EGYPTIAN POUND - 818",
+                  "opcion_id": "17.2.61"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "EL SALVADOR COLON - 222",
+                  "opcion_id": "17.2.62"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "EQGUINEA EKWELE - 226",
+                  "opcion_id": "17.2.63"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ERITREAN NAFKA - 232",
+                  "opcion_id": "17.2.64"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ESTONIAN KROON - 233",
+                  "opcion_id": "17.2.65"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ETHIOPIAN BIRR - 230",
+                  "opcion_id": "17.2.66"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "EURO - 978",
+                  "opcion_id": "17.2.67"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "EURO CURR UNIT - 954",
+                  "opcion_id": "17.2.68"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "FALKLAND IS. POUND - 238",
+                  "opcion_id": "17.2.69"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "FIJI DOLLAR - 242",
+                  "opcion_id": "17.2.70"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "FINNISH MARKKA - 246",
+                  "opcion_id": "17.2.71"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "FRENCH FRANC - 250",
+                  "opcion_id": "17.2.72"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GAMBIA DALASI - 270",
+                  "opcion_id": "17.2.73"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GEORGIAN COUPON - 268",
+                  "opcion_id": "17.2.74"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GEORGIAN LARI - 981",
+                  "opcion_id": "17.2.75"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GHANA CEDI - 288",
+                  "opcion_id": "17.2.76"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GHANA CEDI - 936",
+                  "opcion_id": "17.2.77"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GIBRALTAR POUND - 292",
+                  "opcion_id": "17.2.78"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GREEK DRACHMA - 300",
+                  "opcion_id": "17.2.79"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GUATEMALA QUETZAL - 320",
+                  "opcion_id": "17.2.80"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GUINEA FRANC - 324",
+                  "opcion_id": "17.2.81"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GUINEA,BISSAU PESO - 624",
+                  "opcion_id": "17.2.82"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "GUYANA DOLLAR - 328",
+                  "opcion_id": "17.2.83"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "HAITI GOURDE - 332",
+                  "opcion_id": "17.2.84"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "HONDURA LEMPIRA - 340",
+                  "opcion_id": "17.2.85"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "HONG KONG DOLLAR - 344",
+                  "opcion_id": "17.2.86"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "HUNGARY FORINT - 348",
+                  "opcion_id": "17.2.87"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ICELAND KRONA - 352",
+                  "opcion_id": "17.2.88"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "INDIAN RUPEE - 356",
+                  "opcion_id": "17.2.89"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "INDONESIAN RUPIAH - 360",
+                  "opcion_id": "17.2.90"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "IRANIAN AIRLINE RATE - 365",
+                  "opcion_id": "17.2.91"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "IRANIAN RIAL - 364",
+                  "opcion_id": "17.2.92"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "IRAQI DINAR - 368",
+                  "opcion_id": "17.2.93"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "IRISH POUND - 372",
+                  "opcion_id": "17.2.94"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ITALIAN LIRA - 380",
+                  "opcion_id": "17.2.95"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "JAMAICAN DOLLAR - 388",
+                  "opcion_id": "17.2.96"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "JORDANIAN DINAR - 400",
+                  "opcion_id": "17.2.97"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "KAZAKHSTAN TENGE - 398",
+                  "opcion_id": "17.2.98"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "KENYAN SHILLING - 404",
+                  "opcion_id": "17.2.99"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "KUWAITI DINAR - 414",
+                  "opcion_id": "17.2.100"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "KYRGYZSTAN SOM - 417",
+                  "opcion_id": "17.2.101"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "LAOTIAN KIP - 418",
+                  "opcion_id": "17.2.102"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "LATVIAN LATS - 428",
+                  "opcion_id": "17.2.103"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "LEBANESE POUND - 422",
+                  "opcion_id": "17.2.104"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "LESOTHO LOTI - 426",
+                  "opcion_id": "17.2.105"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "LIBERIAN DOLLAR - 430",
+                  "opcion_id": "17.2.106"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "LIBYAN DINAR - 434",
+                  "opcion_id": "17.2.107"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "LITHUANIAN LITAS - 440",
+                  "opcion_id": "17.2.108"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "LUXEMBOURG FRANC - 442",
+                  "opcion_id": "17.2.109"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MACAU PATACA - 446",
+                  "opcion_id": "17.2.110"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MACEDONIAN DENAR - 807",
+                  "opcion_id": "17.2.111"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MALAGASY FRANC - 450",
+                  "opcion_id": "17.2.112"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MALAWI KWACHA - 454",
+                  "opcion_id": "17.2.113"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MALAYSIAN RINGGIT - 458",
+                  "opcion_id": "17.2.114"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MALDIVIAN RUFIYAA - 462",
+                  "opcion_id": "17.2.115"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MALI FRANC - 466",
+                  "opcion_id": "17.2.116"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MALTESE LIRA - 470",
+                  "opcion_id": "17.2.117"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MAURITANIAN OUGUIYA - 478",
+                  "opcion_id": "17.2.118"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MAURITIUS RUPEE - 480",
+                  "opcion_id": "17.2.119"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MEXICAN PESO - 484",
+                  "opcion_id": "17.2.120"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MEXICAN UNID DE INV - 979",
+                  "opcion_id": "17.2.121"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MOLDOVAN LEU - 498",
+                  "opcion_id": "17.2.122"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MONGOLIAN TUGRIK - 496",
+                  "opcion_id": "17.2.123"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MOROCCAN DIRHAM - 504",
+                  "opcion_id": "17.2.124"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MOZAMBIQUE METICAL - 508",
+                  "opcion_id": "17.2.125"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "MYANMAR KYAT - 104",
+                  "opcion_id": "17.2.126"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "NAMIBIA DOLLAR - 516",
+                  "opcion_id": "17.2.127"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "NEPALI RUPEE - 524",
+                  "opcion_id": "17.2.128"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "NETHER. ANTIL. GUILDER - 532",
+                  "opcion_id": "17.2.129"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "NETHERLANDS GUILDER - 528",
+                  "opcion_id": "17.2.130"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "NEW TAIWAN DOLLAR - 901",
+                  "opcion_id": "17.2.131"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "NEW ZEALAND DOLLAR - 554",
+                  "opcion_id": "17.2.132"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "NICARAGUA CORDOBA - 558",
+                  "opcion_id": "17.2.133"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "NIGERIAN NAIRA - 566",
+                  "opcion_id": "17.2.134"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "NORTH KOREAN WON - 408",
+                  "opcion_id": "17.2.135"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "NORWEGIAN KRONE - 578",
+                  "opcion_id": "17.2.136"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "OMANI RIAL - 512",
+                  "opcion_id": "17.2.137"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "PAKISTAN RUPEE - 586",
+                  "opcion_id": "17.2.138"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "PALLADIUM - 964",
+                  "opcion_id": "17.2.139"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "PANAMA BALBOA - 590",
+                  "opcion_id": "17.2.140"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "PAPUA NEW GUINEA KINA - 598",
+                  "opcion_id": "17.2.141"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "PARAGUAY GUARANI - 600",
+                  "opcion_id": "17.2.142"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "PERUANIAN INTI - 604",
+                  "opcion_id": "17.2.143"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "PHILIPPINE PESO - 608",
+                  "opcion_id": "17.2.144"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "PLATINUM - 962",
+                  "opcion_id": "17.2.145"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "POLISH ZLOTY - 985",
+                  "opcion_id": "17.2.146"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "PORTUGUESE ESCUDO - 620",
+                  "opcion_id": "17.2.147"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "QATARI RIAL - 634",
+                  "opcion_id": "17.2.148"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "RHODESIAN DOLLAR - 716",
+                  "opcion_id": "17.2.149"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ROMANIAN LEU - 642",
+                  "opcion_id": "17.2.150"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "RUSSIAN RUBLE - 643",
+                  "opcion_id": "17.2.151"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "RWANDA FRANC - 646",
+                  "opcion_id": "17.2.152"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SAO TOME/PRINCIPE DOBRA - 678",
+                  "opcion_id": "17.2.153"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SAUDI RIYAL - 682",
+                  "opcion_id": "17.2.154"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SERBIAN DINAR - 941",
+                  "opcion_id": "17.2.155"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SEYCHELLES RUPEE - 690",
+                  "opcion_id": "17.2.156"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SIERRA LEONE LEONE - 694",
+                  "opcion_id": "17.2.157"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SILVER - 961",
+                  "opcion_id": "17.2.158"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SINGAPORE DOLLAR - 702",
+                  "opcion_id": "17.2.159"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SLOVAK KORUNA - 703",
+                  "opcion_id": "17.2.160"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SLOVENIAN TOLAR - 705",
+                  "opcion_id": "17.2.161"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SOLOMON IS. DOLLAR - 090",
+                  "opcion_id": "17.2.162"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SOMALI SHILLING - 706",
+                  "opcion_id": "17.2.163"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SOUTH AFRICAN RAND - 710",
+                  "opcion_id": "17.2.164"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SOUTH KOREAN WON - 410",
+                  "opcion_id": "17.2.165"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SOVIET RUBLE - 810",
+                  "opcion_id": "17.2.166"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SPANISH PESETA - 724",
+                  "opcion_id": "17.2.167"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SRI LANKA RUPEE - 144",
+                  "opcion_id": "17.2.168"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ST. HELENA POUND - 654",
+                  "opcion_id": "17.2.169"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SUDANESE DINAR - 736",
+                  "opcion_id": "17.2.170"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SUDANESE POUND - 938",
+                  "opcion_id": "17.2.171"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SURINAME DOLLAR - 968",
+                  "opcion_id": "17.2.172"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SURINAME GUILDER - 740",
+                  "opcion_id": "17.2.173"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SWAZI LILANGENI - 748",
+                  "opcion_id": "17.2.174"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SWEDISH KRONA - 752",
+                  "opcion_id": "17.2.175"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SWISS FRANC - 756",
+                  "opcion_id": "17.2.176"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "SYRIAN POUND - 760",
+                  "opcion_id": "17.2.177"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "TAJIKISTAN RUBLE - 762",
+                  "opcion_id": "17.2.178"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "TAJIKISTAN SOMONI - 972",
+                  "opcion_id": "17.2.179"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "TANZANIA SHILLING - 834",
+                  "opcion_id": "17.2.180"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "THAI BAHT - 764",
+                  "opcion_id": "17.2.181"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "TONGA PA'ANGA - 776",
+                  "opcion_id": "17.2.182"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "TRINIDAD/TOBAGO DOLLAR - 780",
+                  "opcion_id": "17.2.183"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "TUNISIAN DINAR - 788",
+                  "opcion_id": "17.2.184"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "TURK LIRA - 792",
+                  "opcion_id": "17.2.185"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "TURKMENISTAN MANAT - 795",
+                  "opcion_id": "17.2.186"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "UGANDA SHILLING - 800",
+                  "opcion_id": "17.2.187"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "UK POUND STERLING - 826",
+                  "opcion_id": "17.2.188"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "UKRAINE HRYVNIA - 980",
+                  "opcion_id": "17.2.189"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "URUGUAY PESO - 858",
+                  "opcion_id": "17.2.190"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "US DOLLAR - 840",
+                  "opcion_id": "17.2.191"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "UZBEKISTAN SUM - 860",
+                  "opcion_id": "17.2.192"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "VANUATU VATU - 548",
+                  "opcion_id": "17.2.193"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "VENEZUELAN BOLIVAR - 862",
+                  "opcion_id": "17.2.194"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "VIET NAM DONG - 704",
+                  "opcion_id": "17.2.195"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "WESTERN SAMOA TALA - 882",
+                  "opcion_id": "17.2.196"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "YEMENI RIAL - 886",
+                  "opcion_id": "17.2.197"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "YUGOSLAV DINAR - 890",
+                  "opcion_id": "17.2.198"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ZAIRE - 180",
+                  "opcion_id": "17.2.199"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ZAMBIAN KWACHA - 894",
+                  "opcion_id": "17.2.200"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ZIMBABWE DOLLAR - 716",
+                  "opcion_id": "17.2.201"
+              },
+              {
+                  "dependencia_opcion_id": "null",
+                  "label": "ZIMBABWE DOLLAR - 932",
+                  "opcion_id": "17.2.202"
+              }
+          ]
+      }
+  ]
+},
+
+
+
+{
+  "id": "22",
+  "label": "Merchant Contact Information",
+  "tipo": "bloque",
+  "dependencia": "null",
+  "validacion": {
+      "requerido": "false"
+  },
+  "campos_bloque": [
+      {
+          "id": "22.1",
+          "tipo": "text",
+          "label": "Contact Name",
+          "dependencia": {
+              "id": "22",
+              "tipo": "bloque"
+          },
+          "placeholder": "Enter contact name",
+          "validacion": {
+              "requerido": "false"
+          }
+      },
+      {
+          "id": "22.2",
+          "tipo": "select",
+          "label": "Contact Phone",
+          "dependencia": {
+              "id": "22",
+              "tipo": "bloque"
+          },
+          "options": [
+              {
+                  "label": "Fax",
+                  "opcion_id": "22.2.1"
+              },
+              {
+                  "label": "Other",
+                  "opcion_id": "22.2.2"
+              }
+          ]
+      },
+      {
+          "id": "22.3",
+          "tipo": "text",
+          "label": "Contact Fax 1",
+          "dependencia": {
+              "id": "22",
+              "tipo": "bloque"
+          },
+          "placeholder": "Enter first fax number",
+          "validacion": {
+              "requerido": "false"
+          }
+      },
+      {
+          "id": "22.4",
+          "tipo": "text",
+          "label": "Contact Fax 2",
+          "dependencia": {
+              "id": "22",
+              "tipo": "bloque"
+          },
+          "placeholder": "Enter second fax number",
+          "validacion": {
+              "requerido": "false"
+          }
+      },
+      {
+          "id": "22.5",
+          "tipo": "text",
+          "label": "Email",
+          "dependencia": {
+              "id": "22",
+              "tipo": "bloque"
+          },
+          "placeholder": "Enter email address",
+          "validacion": {
+              "requerido": "false"
+          }
+      }
+  ]
+}
+
+
+{
+  "id": "23",
+  "label": "Acquirer Contact Information",
+  "tipo": "bloque",
+  "dependencia": "null",
+  "validacion": {
+      "requerido": "false"
+  },
+  "campos_bloque": [
+      {
+          "id": "23.1",
+          "tipo": "text",
+          "label": "Name",
+          "dependencia": {
+              "id": "23",
+              "tipo": "bloque"
+          },
+          "placeholder": "Enter name",
+          "validacion": {
+              "requerido": "false"
+          }
+      },
+      {
+          "id": "23.2",
+          "tipo": "select",
+          "label": "Select one",
+          "dependencia": {
+              "id": "23",
+              "tipo": "bloque"
+          },
+          "options": [
+              {
+                  "label": "Fax",
+                  "opcion_id": "23.2.1"
+              },
+              {
+                  "label": "Other",
+                  "opcion_id": "23.2.2"
+              }
+          ]
+      },
+      {
+          "id": "23.3",
+          "tipo": "text",
+          "label": "Phone 1",
+          "dependencia": {
+              "id": "23",
+              "tipo": "bloque"
+          },
+          "placeholder": "Enter first phone number",
+          "validacion": {
+              "requerido": "false"
+          }
+      },
+      {
+          "id": "23.4",
+          "tipo": "text",
+          "label": "Phone 2",
+          "dependencia": {
+              "id": "23",
+              "tipo": "bloque"
+          },
+          "placeholder": "Enter second phone number",
+          "validacion": {
+              "requerido": "false"
+          }
+      },
+      {
+          "id": "23.5",
+          "tipo": "text",
+          "label": "Email",
+          "dependencia": {
+              "id": "23",
+              "tipo": "bloque"
+          },
+          "placeholder": "Enter email address",
+          "validacion": {
+              "requerido": "false"
+          }
+      }
+  ]
+}
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------

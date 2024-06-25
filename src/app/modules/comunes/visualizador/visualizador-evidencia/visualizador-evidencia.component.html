@@ -1,0 +1,40 @@
+<div class="visualizador-wrapper">
+  <h2 *ngIf="isLoading" class="modal-2-content-visualizador-titulo">Obteniendo evidencia del caso...</h2>
+  <div *ngIf="isLoading" class="visualizador loading">
+    <div class="spinner white"></div>
+  </div>
+
+  <div *ngIf="!isLoading && doc; else noDocsFound" class="visualizador-wrapper">
+    <h2 class="modal-2-content-visualizador-titulo">{{doc.file_name}} <span class="doc-count-span"
+        *ngIf="nDocs > 0">{{evidenceNavigatorSpan}}</span> </h2>
+
+    <button [disabled]="leftButtonDisabled" (click)="showPrevDoc()" class="document-navigator left">
+      <i class="fas fa-arrow-left"></i>
+    </button>
+
+    <button [disabled]="rightButtonDisabled" (click)="showNextDoc()" class="document-navigator right">
+      <i class="fas fa-arrow-right"></i>
+    </button>
+
+    <div class="cuerpo-scrollable">
+      <div class="visualizador">
+        <app-pdf-iframe class="visualizador-pdf" *ngIf="currentDocIsPDF; else imageViewer"
+          [fileData]="doc.file_data"></app-pdf-iframe>
+        <ng-template #imageViewer>
+          <img width="95%" [src]="getImgSrc(doc)" alt="Imagen Evidencia" />
+        </ng-template>
+      </div>
+
+      <!-- <div class="contenedor-boton-descargartodo">
+      <div></div>
+      <button class="boton-descargar-todo"><i class="fas fa-download"></i> Descargar todo</button>
+    </div> -->
+    </div>
+  </div>
+  <ng-template #noDocsFound class="visualizador-wrapper">
+    <div class="visualizador loading">
+      <h2 class="no-evidence">No se encontró evidencia para el caso y etapa actual.</h2>
+    </div>
+
+  </ng-template>
+</div>

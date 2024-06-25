@@ -1,0 +1,738 @@
+{
+    "etapa_id": 3,
+    "etapa_nombre": "Disputa Mastercard",
+    "etapa_descripcion": "Disputa Mastercard",
+    "marca_id": 1,
+    "path_evidencia": "",
+    "etapa_campos": [
+      {
+        "id": "1",
+        "tipo": "select",
+        "label": "Reason Code",
+        "dependencia": "null",
+        "placeholder": "null",
+        "validacion": {
+          "requerido": "True"
+        },
+        "selected_value": "",
+        "options": [
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2002 - Non-receipt pf required documentation to support chargenback",
+            "opcion_id": "1.1"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2004 - Invalid Acquirer Reference data on chargeback; documentation was received",
+            "opcion_id": "1.2"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2008 - Issuer authorized transaction",
+            "opcion_id": "1.3"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2011 - Credit previously issued",
+            "opcion_id": "1.4"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2700 - Chargeback remedied - see corresponding documentation",
+            "opcion_id": "1.5"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2701 - Duplicate Chargeback",
+            "opcion_id": "1.6"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2702 - Past chargeback time limit",
+            "opcion_id": "1.7"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2709 - Documentation received was ilegible",
+            "opcion_id": "1.8"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2710 - Scanning error-unrelated documents or partial scan",
+            "opcion_id": "1.9"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2713 - Invalid chargeback",
+            "opcion_id": "1.10"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2870 - Chip liability shift",
+            "opcion_id": "1.11"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "2871 - Chip/PIN liability shift",
+            "opcion_id": "1.12"
+          }
+        ]
+      },
+      {
+        "id": "2",
+        "tipo": "select",
+        "label": "Document Indicator",
+        "dependencia": "null",
+        "placeholder": "null",
+        "validacion": {
+          "requerido": "True"
+        },
+        "selected_value": "",
+        "options": [
+          {
+            "dependencia_opcion_id": "null",
+            "label": "0 - No supporting documentation is provided",
+            "opcion_id": "2.1"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "1 - Supporting documentation will follow",
+            "opcion_id": "2.2"
+          }
+        ]
+      },
+      {
+        "id": "3",
+        "label": "Member message text",
+        "tipo": "select",
+        "dependencia": {
+          "id": "1",
+          "tipo": "select"
+        },
+        "selected_value": "",
+        "placeholder": "",
+        "validacion": {
+          "requerido": "True"
+        },
+        "options": [
+          {
+            "dependencia_opcion_id": "1.1",
+            "label": "Suggested Member Message Text - User editable",
+            "opcion_id": "3.1"
+          },
+          {
+            "dependencia_opcion_id": "1.2",
+            "label": "Suggested Member Message Text - User editable",
+            "opcion_id": "3.2"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "Suggested Member Message Text - User editable",
+            "opcion_id": "3.3"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "$$$$$$ CODE XXXXXX MMDDYY",
+            "opcion_id": "3.4"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "AUTH MMDDYY NO. NNNNNN",
+            "opcion_id": "3.5"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "AUTH MMDDYY/ NNNNNN SL 2",
+            "opcion_id": "3.6"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "AUTH MMDDYY/NNNN NN SL 1",
+            "opcion_id": "3.7"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "CALL REFERRAL AUTH MMDDYY NINNNNN",
+            "opcion_id": "3.8"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "CHIP TRANSACTION",
+            "opcion_id": "3.9"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "INVALID SERVICE CODE X",
+            "opcion_id": "3.10"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "MULTIPLE AUTHORIZATIONS",
+            "opcion_id": "3.11"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "PAYPASS NNNNNN MMDDYY",
+            "opcion_id": "3.12"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "PIN MMDDYY NNNNNN",
+            "opcion_id": "3.13"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "PIN MMDDYY NNNNNN MMDDYY NNNNNN",
+            "opcion_id": "3.14"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "QPS MCC MMDDYY NNNNNN",
+            "opcion_id": "3.15"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "TECHNICAL FALLBACK",
+            "opcion_id": "3.16"
+          },
+          {
+            "dependencia_opcion_id": "1.3",
+            "label": "TRANS AUTHORIZED MMDDYY NO. NNNNNN",
+            "opcion_id": "3.17"
+          },
+          {
+            "dependencia_opcion_id": "1.4",
+            "label": "Suggested Member Message text - User Editable",
+            "opcion_id": "3.18"
+          },
+          {
+            "dependencia_opcion_id": "1.4",
+            "label": "CRED MMDDYY NNNNNNNNNNNNNNNNNNNNNNN",
+            "opcion_id": "3.19"
+          },
+          {
+            "dependencia_opcion_id": "1.4",
+            "label": "CREDIT MMDDYY XXXXXXXXXXXX",
+            "opcion_id": "3.20"
+          },
+          {
+            "dependencia_opcion_id": "1.5",
+            "label": "Suggested Member Message text - User Editable",
+            "opcion_id": "3.21"
+          },
+          {
+            "dependencia_opcion_id": "1.5",
+            "label": "CHIP TERMINAL DE 22, s1, value = 5, C, D, E, or M",
+            "opcion_id": "3.22"
+          },
+          {
+            "dependencia_opcion_id": "1.5",
+            "label": "CHIP TRANSACTION",
+            "opcion_id": "3.23"
+          },
+          {
+            "dependencia_opcion_id": "1.5",
+            "label": "COMP EVID",
+            "opcion_id": "3.24"
+          },
+          {
+            "dependencia_opcion_id": "1.5",
+            "label": "HYBRID POI MMDDYY NNNNNN",
+            "opcion_id": "3.25"
+          },
+          {
+            "dependencia_opcion_id": "1.5",
+            "label": "RS3 USERNAME + PHONE",
+            "opcion_id": "3.26"
+          },
+          {
+            "dependencia_opcion_id": "1.5",
+            "label": "RS5",
+            "opcion_id": "3.27"
+          },
+          {
+            "dependencia_opcion_id": "1.5",
+            "label": "RS7",
+            "opcion_id": "3.28"
+          },
+          {
+            "dependencia_opcion_id": "1.6",
+            "label": "Suggested Member Message text - User Editable",
+            "opcion_id": "3.29"
+          },
+          {
+            "dependencia_opcion_id": "1.7",
+            "label": "Suggested Member Message text - User Editable",
+            "opcion_id": "3.30"
+          },
+          {
+            "dependencia_opcion_id": "1.8",
+            "label": "Suggested Member Message text - User Editable",
+            "opcion_id": "3.31"
+          },
+          {
+            "dependencia_opcion_id": "1.9",
+            "label": "Suggested Member Message text - User Editable",
+            "opcion_id": "3.32"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "Suggested Member Message text - User Editable",
+            "opcion_id": "3.33"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "AUTH DATE MMDDYY",
+            "opcion_id": "3.34"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "AUTH MMDDYY 1403",
+            "opcion_id": "3.35"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "AUTH MMDDYY 1404",
+            "opcion_id": "3.36"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "CHIP LIABILITY NA",
+            "opcion_id": "3.37"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "CHIP TRANSACTION",
+            "opcion_id": "3.38"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "CHIP/PIN LIABILITY NA",
+            "opcion_id": "3.39"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "DE 55 PREVIOUSLY PROVIDED",
+            "opcion_id": "3.40"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "DELAYED PRESENTMENT",
+            "opcion_id": "3.41"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "FNS",
+            "opcion_id": "3.42"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "FNS COUNT NN",
+            "opcion_id": "3.43"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "FRAUD TYPE",
+            "opcion_id": "3.44"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "IMPROPER SAFE REPORTING",
+            "opcion_id": "3.45"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "INVALID TRANSACTION DATE",
+            "opcion_id": "3.46"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "ISSUER LISTED GSB NINN CLS INELIG",
+            "opcion_id": "3.47"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "ISSUER LISTED GSB NNN FNS EXCEEDED",
+            "opcion_id": "3.48"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "MERCHANT NOT LISTED",
+            "opcion_id": "3.49"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "NN MMDDYY IN MMDDYY AUTH MMDDYY",
+            "opcion_id": "3.50"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "PREAUTH MMDDYY 1403",
+            "opcion_id": "3.51"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "PREAUTH MMDDYY 1404",
+            "opcion_id": "3.52"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "PREAUTH MMDDYY or AUTH MMDDYY or INSTALLMENT or TRANSIT or ACCOUNT NOT CLOSED",
+            "opcion_id": "3.53"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "PREAUTH MMDDYY or AUTH MMDDYY TRANSIT or ACCOUNT NOT CLOSED",
+            "opcion_id": "3.54"
+          },
+          {
+            "dependencia_opcion_id": "1.10",
+            "label": "XXX",
+            "opcion_id": "3.55"
+          },
+          {
+            "dependencia_opcion_id": "1.11",
+            "label": "Suggested Member Message text - User Editable",
+            "opcion_id": "3.56"
+          },
+          {
+            "dependencia_opcion_id": "1.11",
+            "label": "AUTH MMDDYY NNNNNN",
+            "opcion_id": "3.57"
+          },
+          {
+            "dependencia_opcion_id": "1.11",
+            "label": "PIN MMDDYY NNNNNN",
+            "opcion_id": "3.58"
+          },
+          {
+            "dependencia_opcion_id": "1.11",
+            "label": "TRANSACTION AUTHORIZED MMDDYY NO. NNNNNN",
+            "opcion_id": "3.59"
+          },
+          {
+            "dependencia_opcion_id": "1.12",
+            "label": "Suggested Member Message text - User Editable",
+            "opcion_id": "3.60"
+          }
+        ]
+      },
+      {
+        "id": "4",
+        "label": "Partial representament",
+        "tipo": "checkbox",
+        "dependencia": "null",
+        "placeholder": "null",
+        "validacion": "null",
+        "selected_value": {"input": [false], "output": []},
+        "options": []
+      },
+      {
+        "id": "5",
+        "label": "Amount",
+        "tipo": "number",
+        "dependencia": {
+          "id": "4",
+          "tipo": "checkbox"
+        },
+        "placeholder": "Ingrese el monto",
+        "validacion": "null",
+        "selected_value": "",
+        "options": [
+          {
+            "dependencia_opcion_id": "null",
+            "label": "null",
+            "opcion_id": "null"
+          }
+        ]
+      },
+      {
+        "id": "6",
+        "label": "Amount currency",
+        "tipo": "select",
+        "dependencia": {
+          "id": "4",
+          "tipo": "checkbox"
+        },
+        "placeholder": "null",
+        "validacion": "null",
+        "selected_value": "",
+        "options": [
+          {
+            "dependencia_opcion_id": "null",
+            "label": "CLP",
+            "opcion_id": "6.1"
+          }
+        ]
+      },
+      {
+        "id": "7",
+        "label": "Exclude Clearing Edits",
+        "tipo": "checkbox",
+        "dependencia": "null",
+        "placeholder": "null",
+        "validacion": "null",
+        "selected_value": {"input": [false], "output": []},
+        "options": []
+      },
+      {
+        "id": "8",
+        "label": "Edit Exclusion",
+        "tipo": "select",
+        "dependencia": {
+          "id": "7",
+          "tipo": "checkbox"
+        },
+        "placeholder": "null",
+        "validacion": {
+          "requerido": "True"
+        },
+        "selected_value": "",
+        "options": [
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Conversion Exclusion-Y",
+            "opcion_id": "8.1"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -B0",
+            "opcion_id": "8.2"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -B1",
+            "opcion_id": "8.3"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -B2",
+            "opcion_id": "8.4"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -B3",
+            "opcion_id": "8.5"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -B4",
+            "opcion_id": "8.6"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -B5",
+            "opcion_id": "8.7"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -B6",
+            "opcion_id": "8.8"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -B7",
+            "opcion_id": "8.9"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -B8",
+            "opcion_id": "8.10"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -B9",
+            "opcion_id": "8.11"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BA",
+            "opcion_id": "8.12"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BB",
+            "opcion_id": "8.13"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BC",
+            "opcion_id": "8.14"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BD",
+            "opcion_id": "8.15"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BE",
+            "opcion_id": "8.16"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BF",
+            "opcion_id": "8.17"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BG",
+            "opcion_id": "8.18"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BH",
+            "opcion_id": "8.19"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BI",
+            "opcion_id": "8.20"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BJ",
+            "opcion_id": "8.21"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BK",
+            "opcion_id": "8.22"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BL",
+            "opcion_id": "8.23"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BM",
+            "opcion_id": "8.24"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BN",
+            "opcion_id": "8.25"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BO",
+            "opcion_id": "8.26"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BP",
+            "opcion_id": "8.27"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BQ",
+            "opcion_id": "8.28"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BR",
+            "opcion_id": "8.29"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BS",
+            "opcion_id": "8.30"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BT",
+            "opcion_id": "8.31"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BU",
+            "opcion_id": "8.32"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BV",
+            "opcion_id": "8.33"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BW",
+            "opcion_id": "8.34"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BX",
+            "opcion_id": "8.35"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BY",
+            "opcion_id": "8.36"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Special conditions exclusion -BZ",
+            "opcion_id": "8.37"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Business service agreement exclusion-spaces",
+            "opcion_id": "8.38"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Harship variance exclusion-spaces",
+            "opcion_id": "8.39"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "ATM exclusion-spaces",
+            "opcion_id": "8.40"
+          },
+          {
+            "dependencia_opcion_id": "null",
+            "label": "Bilateral settlement and collection-only exclusion-spaces",
+            "opcion_id": "8.41"
+          }
+        ]
+      },
+      {
+        "id": "9",
+        "tipo": "text",
+        "label": "Document memo",
+        "dependencia": {
+          "id": "2",
+          "tipo": "select"
+        },
+        "placeholder": "",
+        "validacion": {
+          "requerido": "True"
+        },
+        "selected_value": "",
+        "options": [
+          {
+            "dependencia_opcion_id": "2.2",
+            "label": "null",
+            "opcion_id": "null"
+          }
+        ]
+      },
+      {}
+    ]
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  

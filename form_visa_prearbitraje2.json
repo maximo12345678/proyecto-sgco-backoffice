@@ -1,0 +1,420 @@
+{
+    "etapa_id": 10,
+    "etapa_nombre": "Configuracin Pre-arbitraje Visa",
+    "etapa_descripcion": "Pre-arbitraje Visa (exclusivo motivos)",
+    "marca_id": 2,
+    "etapa_campos": [
+        {
+            "id": "1",
+            "tipo": "radio",
+            "label": "Response",
+            "dependencia": "null",
+            "placeholder": "null",
+            "validacion": {
+                "requerido": "true"
+            },
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "null",
+                    "label": "Accept Full",
+                    "opcion_id": "1.1"
+                },
+                {
+                    "dependencia_opcion_id": "null",
+                    "label": "Accept Partial",
+                    "opcion_id": "1.2"
+                },
+                {
+                    "dependencia_opcion_id": "null",
+                    "label": "Decline",
+                    "opcion_id": "1.3"
+                }
+            ]
+        },
+        {
+            "id": "2",
+            "tipo": "text",
+            "label": "Comments",
+            "dependencia": "null",
+            "placeholder": "Add any comments here",
+            "validacion": {
+                "requerido": "false"
+            },
+            "selected_value": "",
+            "options": []
+        },
+       
+        {
+            "id": "4",
+            "tipo": "text",
+            "label": "Name",
+            "dependencia": "null",
+            "placeholder": "null",
+            "validacion": "null",
+            "selected_value": "",
+            "options": []
+        },
+        {
+            "id": "5",
+            "tipo": "select",
+            "label": "Select one",
+            "dependencia": "null",
+            "placeholder": "null",
+            "validacion": "null",
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "null",
+                    "label": "Fax",
+                    "opcion_id": "5.1"
+                },
+                {
+                    "dependencia_opcion_id": "null",
+                    "label": "Other",
+                    "opcion_id": "5.2"
+                }
+            ]
+        },
+        
+        {
+            "id": "7",
+            "tipo": "text",
+            "label": "Email",
+            "dependencia": "null",
+            "placeholder": "null",
+            "validacion": "null",
+            "selected_value": "",
+            "options": []
+        },
+        {
+            "id": "8",
+            "tipo": "text",
+            "label": "Name",
+            "dependencia": "null",
+            "placeholder": "Enter acquirer's email",
+            "validacion": "null",
+            "selected_value": "",
+            "options": []
+        },
+        {
+            "id": "9",
+            "tipo": "select",
+            "label": "Select one",
+            "dependencia": "null",
+            "placeholder": "null",
+            "validacion": "null",
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "null",
+                    "label": "Fax",
+                    "opcion_id": "9.1"
+                },
+                {
+                    "dependencia_opcion_id": "null",
+                    "label": "Other",
+                    "opcion_id": "9.2"
+                }
+            ]
+        },
+        
+        {
+            "id": "11",
+            "tipo": "text",
+            "label": "Email",
+            "dependencia": "null",
+            "placeholder": "null",
+            "validacion": "null",
+            "selected_value": "",
+            "options": []
+        },
+        {
+            "id": "12",
+            "tipo": "text",
+            "label": "Acceptance Amount",
+            "dependencia": {
+                "id": "1",
+                "tipo": "radio"
+            },
+            "placeholder": "null",
+            "validacion": {
+                "requerido": "true",
+                "numerico": "true"
+            },
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "1.2",
+                    "label": "null",
+                    "opcion_id": "null"
+                }
+            ]
+        },
+        {
+            "id": "13",
+            "tipo": "text",
+            "label": "Why are you not accepting full liabillity?",
+            "dependencia": {
+                "id": "1",
+                "tipo": "radio"
+            },
+            "placeholder": "null",
+            "validacion": {
+                "requerido": "true"
+            },
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "1.2",
+                    "label": "null",
+                    "opcion_id": "null"
+                }
+            ]
+        },
+        {
+            "id": "14",
+            "tipo": "select",
+            "label": "Response Reason",
+            "dependencia": {
+                "id": "1",
+                "tipo": "radio"
+            },
+            "placeholder": "null",
+            "validacion": {
+                "requerido": "true"
+            },
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "1.2",
+                    "label": "Cardholder No Longer Disputes",
+                    "opcion_id": "14.1"
+                },
+                {
+                    "dependencia_opcion_id": "1.2",
+                    "label": "Credit or Reversal Processed ",
+                    "opcion_id": "14.2"
+                },
+                {
+                    "dependencia_opcion_id": "1.2",
+                    "label": "Invalid Dispute ",
+                    "opcion_id": "14.3"
+                },
+                {
+                    "dependencia_opcion_id": "1.2",
+                    "label": "Not listed Above ",
+                    "opcion_id": "14.4"
+                },
+                {
+                    "dependencia_opcion_id": "1.3",
+                    "label": "Cardholder No Longer Disputes",
+                    "opcion_id": "14.5"
+                },
+                {
+                    "dependencia_opcion_id": "1.3",
+                    "label": "Credit or Reversal Processed ",
+                    "opcion_id": "14.6"
+                },
+                {
+                    "dependencia_opcion_id": "1.3",
+                    "label": "Invalid Dispute ",
+                    "opcion_id": "14.7"
+                },
+                {
+                    "dependencia_opcion_id": "1.3",
+                    "label": "Not listed Above ",
+                    "opcion_id": "14.8"
+                }
+            ]
+        },
+        {
+            "id": "15",
+            "tipo": "text",
+            "label": "Explanation",
+            "dependencia": {
+                "id": "1",
+                "tipo": "select"
+            },
+            "placeholder": "null",
+            "validacion": {
+                "requerido": [
+                    "14.2",
+                    "14.3"
+                ]
+            },
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "1.2",
+                    "label": "null",
+                    "opcion_id": "null"
+                }
+            ]
+        },
+        {
+            "id": "16",
+            "tipo": "date",
+            "label": "Create date",
+            "dependencia": {
+                "id": "14",
+                "tipo": "select"
+            },
+            "placeholder": "null",
+            "validacion": {
+                "requerido": "true"
+            },
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "14.2",
+                    "label": "null",
+                    "opcion_id": "null"
+                }
+            ]
+        },
+        
+        {
+            "id": "18",
+            "tipo": "text",
+            "label": "Acquirer Reference Number",
+            "dependencia": {
+                "id": "14",
+                "tipo": "select"
+            },
+            "placeholder": "null",
+            "validacion": {
+                "requerido": "true",
+                "numerico": "true"
+            },
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "14.2",
+                    "label": "null",
+                    "opcion_id": "null"
+                }
+            ]
+        },
+        {
+            "id": "19",
+            "tipo": "select",
+            "label": "Dispute is invalid because:",
+            "dependencia": {
+                "id": "14",
+                "tipo": "select"
+            },
+            "placeholder": "null",
+            "validacion": {
+                "requerido": "true"
+            },
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "14.3",
+                    "label": "Cardholder cancelled before the expected receipt date of the merchandise/services",
+                    "opcion_id": "19.1"
+                },
+                {
+                    "dependencia_opcion_id": "14.3",
+                    "label": "Merchandise being held at cardholder's custom agency",
+                    "opcion_id": "19.2"
+                },
+                {
+                    "dependencia_opcion_id": "14.3",
+                    "label": "Balance of a partial prepayment was not paid and the merchant was willing and able to provide merchandise/services",
+                    "opcion_id": "19.3"
+                },
+                {
+                    "dependencia_opcion_id": "14.3",
+                    "label": "Cardholder received merchandise at the agreed upon location or by the agreed date/time",
+                    "opcion_id": "19.4"
+                },
+                {
+                    "dependencia_opcion_id": "14.3",
+                    "label": "Name on manifest of departed flight matches name on purchased itinerary",
+                    "opcion_id": "19.5"
+                },
+                {
+                    "dependencia_opcion_id": "14.3",
+                    "label": "Not listed above",
+                    "opcion_id": "19.6"
+                }
+            ]
+        },
+        {
+            "id": "20",
+            "tipo": "radio",
+            "label": "motivo",
+            "dependencia": {
+                "id": "19",
+                "tipo": "select"
+            },
+            "placeholder": "null",
+            "validacion": {
+                "requerido": "true"
+            },
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "19.6",
+                    "label": "12.5",
+                    "opcion_id": "20.1"
+                },
+                {
+                    "dependencia_opcion_id": "19.6",
+                    "label": "12.6",
+                    "opcion_id": "20.2"
+                },
+                {
+                    "dependencia_opcion_id": "19.6",
+                    "label": "13.1",
+                    "opcion_id": "20.3"
+                },
+                {
+                    "dependencia_opcion_id": "19.6",
+                    "label": "13.6",
+                    "opcion_id": "20.4"
+                },
+                {
+                    "dependencia_opcion_id": "19.6",
+                    "label": "13.7",
+                    "opcion_id": "20.5"
+                }
+            ]
+        },
+        {
+            "id": "21",
+            "tipo": "text",
+            "label": "Provide brief invalid dispute reason that was not listed",
+            "dependencia": {
+                "id": "20",
+                "tipo": "select"
+            },
+            "placeholder": "null",
+            "validacion": {
+                "requerido": "true",
+                "numerico": "true"
+            },
+            "selected_value": "",
+            "options": [
+                {
+                    "dependencia_opcion_id": "20.3",
+                    "label": "null",
+                    "opcion_id": "null"
+                },
+                {
+                    "dependencia_opcion_id": "20.4",
+                    "label": "null",
+                    "opcion_id": "null"
+                },
+                {
+                    "dependencia_opcion_id": "20.5",
+                    "label": "null",
+                    "opcion_id": "null"
+                }
+            ]
+        }
+        
+    ]
+}

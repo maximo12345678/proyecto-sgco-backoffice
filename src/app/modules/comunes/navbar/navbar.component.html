@@ -1,0 +1,176 @@
+<div>
+  <!-- Navegador superior -->
+  <div class="toolbar" id="navbar-principal">
+
+    <span class="toolbar-titulo">Sistema de Gestion de Contracargos</span>
+
+    <div class="spacer"></div>
+
+    <div class="toolbar-content-nombre-icono">
+      <span class="toolbar-nombreUsuario">{{usuario.nombre}} | {{userRoleName}} </span>
+
+      <app-alertas (notificationClicked)="navegarPorAlertaClickeada($event)"
+        [currentRole]="usuario.rol_id"></app-alertas>
+    </div>
+
+  </div>
+
+
+  <!-- Navegador superior responsive-->
+  <div class="toolbar" id="navbar-responsive">
+    <div class="toolbar-menu">
+      <div>
+        <span class="toolbar-titulo">Sistema de Contracargos</span>
+      </div>
+
+      <div class="spacer"></div>
+
+      <div>
+        <button [ngClass]="{'icono-activar-menu': true, 'seleccionado': botonActiveMenu === true}"
+          (click)="cambiarBotonActiveMenu()">
+          <i title="Contracargos" class="fa fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Modal menu responsive-->
+  <div class="modal-menu" *ngIf="botonActiveMenu">
+    <div class="modal-menu-content ">
+
+      <div class="modal-menu-content-cabecera">
+        <div>
+          <a [routerLink]="getRouteStr(RouteKeys.Contracargos)">
+            <img src="../../assets/logo-klap.png" alt="Logo Klap" class="logo-menu">
+          </a>
+        </div>
+        <div>
+          <button class="modal-close-menu" (click)="cambiarBotonActiveMenu()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-menu-content-options">
+        <a *ngIf="inputKeysIncludes(RouteKeys.Contracargos)" [routerLink]="getRouteStr(RouteKeys.Contracargos)"
+          (click)="seleccionarBotonMenu(pathsMap[RouteKeys.Contracargos])"
+          [ngClass]="{'modal-menu-content-options-option' : true, 'seleccionado' : pathsMap[RouteKeys.Contracargos]}">
+          <button [ngClass]="{'menu-item-icono': true, 'seleccionado':pathsMap[RouteKeys.Contracargos]}">
+            <i title="Contracargos" class="fa fa-bars"></i>
+          </button>
+          <span class="modal-menu-content-options-option-name">Gestión de Contracargos</span>
+        </a>
+
+
+        <a *ngIf="inputKeysIncludes(RouteKeys.Motivos)" [routerLink]="getRouteStr(RouteKeys.Motivos)"
+          (click)="seleccionarBotonMenu(pathsMap[RouteKeys.Motivos])"
+          [ngClass]="{'modal-menu-content-options-option' : true, 'seleccionado' : pathsMap[RouteKeys.Motivos]}">
+          <button [ngClass]="{'menu-item-icono': true, 'seleccionado': isSelected(RouteKeys.Motivos)}">
+            <i title="Gestion de Motivos" class="far fa-file"></i>
+          </button>
+          <span class="modal-menu-content-options-option-name">Motivos</span>
+        </a>
+
+        <a *ngIf="inputKeysIncludes(RouteKeys.MotivosAdmin)" [routerLink]="getRouteStr(RouteKeys.MotivosAdmin)"
+          (click)="seleccionarBotonMenu(pathsMap[RouteKeys.MotivosAdmin])"
+          [ngClass]="{'modal-menu-content-options-option' : true, 'seleccionado' : pathsMap[RouteKeys.MotivosAdmin]}">
+          <button [ngClass]="{'menu-item-icono': true, 'seleccionado': isSelected(RouteKeys.MotivosAdmin)}">
+            <i title="Gestion de Motivos" class="far fa-file"></i>
+          </button>
+          <span class="modal-menu-content-options-option-name">Motivos</span>
+        </a>
+
+        <a *ngIf="inputKeysIncludes(RouteKeys.Configuraciones)" [routerLink]="getRouteStr(RouteKeys.Configuraciones)"
+          (click)="seleccionarBotonMenu(pathsMap[RouteKeys.Configuraciones])"
+          [ngClass]="{'modal-menu-content-options-option' : true, 'seleccionado' : pathsMap[RouteKeys.Configuraciones]}">
+          <button [ngClass]="{'menu-item-icono': true, 'seleccionado': isSelected(RouteKeys.Configuraciones)}">
+            <i title="Configuraciones Generales" class="fas fa-cog"></i>
+          </button>
+          <span class="modal-menu-content-options-option-name">Configuraciones</span>
+        </a>
+
+        <a *ngIf="inputKeysIncludes(RouteKeys.Grupos)" [routerLink]="getRouteStr(RouteKeys.Grupos)"
+          (click)="seleccionarBotonMenu(pathsMap[RouteKeys.Grupos])"
+          [ngClass]="{'modal-menu-content-options-option' : true, 'seleccionado' : pathsMap[RouteKeys.Grupos]}">
+          <button [ngClass]="{'menu-item-icono': true, 'seleccionado': isSelected(RouteKeys.Grupos)}">
+            <i title="Gestion de Grupos" class="fas fa-folder"></i>
+          </button>
+          <span class="modal-menu-content-options-option-name">Grupos</span>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <!-- Sidebar lateral izquierdo -->
+  <div class="sidebar" id="sidebar-principal">
+
+    <a [routerLink]="getRouteStr(RouteKeys.Contracargos)"
+      (click)="seleccionarBotonMenu(pathsMap[RouteKeys.Contracargos])" title="Inicio">
+      <img src="../../assets/logo-klap.png" alt="Logo Klap" class="logo">
+    </a>
+
+    <div class="menu">
+
+      <div *ngIf="inputKeysIncludes(RouteKeys.Contracargos)" class="menu-item">
+        <a [routerLink]="getRouteStr(RouteKeys.Contracargos)">
+          <button [ngClass]="{'menu-item-icono': true, 'seleccionado': isSelected(RouteKeys.Contracargos)}"
+            (click)="seleccionarBotonMenu(pathsMap[RouteKeys.Contracargos])">
+            <i title="Gestion de Contracargos" class="fa fa-bars"></i>
+          </button>
+        </a>
+      </div>
+
+      <div *ngIf="inputKeysIncludes(RouteKeys.Motivos)" class="menu-item">
+        <a [routerLink]="getRouteStr(RouteKeys.Motivos)">
+          <button [ngClass]="{'menu-item-icono': true, 'seleccionado': isSelected(RouteKeys.Motivos)}"
+            (click)="seleccionarBotonMenu(pathsMap[RouteKeys.Motivos])">
+            <i title="Gestion de Motivos" class="far fa-file"></i>
+          </button>
+        </a>
+      </div>
+
+      <div *ngIf="inputKeysIncludes(RouteKeys.MotivosAdmin)" class="menu-item">
+        <a [routerLink]="getRouteStr(RouteKeys.MotivosAdmin)">
+          <button [ngClass]="{'menu-item-icono': true, 'seleccionado': isSelected(RouteKeys.MotivosAdmin)}"
+            (click)="seleccionarBotonMenu(pathsMap[RouteKeys.MotivosAdmin])">
+            <i title="Gestion de Motivos" class="far fa-file"></i>
+          </button>
+        </a>
+      </div>
+
+      <div *ngIf="inputKeysIncludes(RouteKeys.Configuraciones)" class="menu-item">
+        <a [routerLink]="getRouteStr(RouteKeys.Configuraciones)">
+          <button [ngClass]="{'menu-item-icono': true, 'seleccionado': isSelected(RouteKeys.Configuraciones)}"
+            (click)="seleccionarBotonMenu(pathsMap[RouteKeys.Configuraciones])">
+            <i title="Configuraciones Generales" class="fas fa-cog"></i>
+          </button>
+        </a>
+      </div>
+
+      <div *ngIf="inputKeysIncludes(RouteKeys.Grupos)" class="menu-item">
+        <a [routerLink]="getRouteStr(RouteKeys.Grupos)">
+          <button [ngClass]="{'menu-item-icono': true, 'seleccionado': isSelected(RouteKeys.Grupos)}"
+            (click)="seleccionarBotonMenu(pathsMap[RouteKeys.Grupos])">
+            <i title="Gestion de Grupos" class="fas fa-folder"></i>
+          </button>
+        </a>
+      </div>
+
+    </div>
+
+    <div class="spacer"></div>
+
+    <button (click)="cerrarSesion()" class="btn-cerrar-sesion" title="Cerrar sesión">
+      <hr>
+      <i class="fas fa-sign-out-alt"></i>
+    </button>
+
+  </div>
+
+
+</div>

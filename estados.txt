@@ -1,0 +1,63 @@
+// Primera representacion
+// MASTERCARD
+// Gestionar:
+CONTRACARGO_MASTERCARD_POR_GESTIONAR(5),   // mostrar los 3 botones Notificar - Cerrar - Representar
+CONTRACARGO_MASTERCARD_CIERRE_PROGRAMADO(6),
+CONTRACARGO_MASTERCARD_NOTIFICACION_PROGRAMADA(8),
+
+
+// Disputar
+DISPUTA_MASTERCARD_POR_DISPUTAR(78),       // mostrar solo boton Iniciar Disputa.
+DISPUTA_MASTERCARD_CONFIGURADA(75),        // una vez disputado, este cambio de estado.
+DISPUTA_MASTERCARD_PROGRAMADA(79),         // al instante, este cambio de estado.
+
+
+
+// VISA
+// Gestionar:
+CONTRACARGO_VISA_POR_GESTIONAR(19),        // mostrar los 3 botones Notificar - Cerrar - Representar
+CONTRACARGO_VISA_CIERRE_PROGRAMADO(20),
+CONTRACARGO_VISA_NOTIFICACION_PROGRAMADA(22),
+
+
+// Pre Arbitraje
+PRE_ARBITRAJE_VISA_POR_PRE_ARBITRAR(118),  // mostrar solo boton Iniciar Pre-Arbitraje
+PRE_ARBITRAJE_VISA_CONFIGURADO(115),       // una vez prearbitrado, este cambio de estado.
+PRE_ARBITRAJE_VISA_PROGRAMADO(119),        // al instante, este cambio de estado.
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Segunda representacion
+// MASTERCARD
+// Pre Arbitraje
+PRE_ARBITRAJE_MASTERCARD_POR_PRE_ARBITRAR(92),
+PRE_ARBITRAJE_MASTERCARD_CONFIGURADO(84),
+PRE_ARBITRAJE_MASTERCARD_PROGRAMADO(93),
+
+
+// VISA
+// Arbitraje
+ARBITRAJE_VISA_POR_ARBITRAR(105),
+ARBITRAJE_VISA_CONFIGURADO(97),
+ARBITRAJE_VISA_PROGRAMADO(107),
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+// Tercera representacion
+// MASTERCARD
+// Arbitraje
+ARBITRAJE_MASTERCARD_POR_ARBITRAR(65),
+ARBITRAJE_MASTERCARD_CONFIGURADO(53),
+ARBITRAJE_MASTERCARD_PROGRAMADO(67),
+
+
+
+
+botones de filtros, con una funcion que modifique los estados o etapas, que hace con las marcas?
+condicionar los botones 
+hacer cambios de estado
+parametrizar json

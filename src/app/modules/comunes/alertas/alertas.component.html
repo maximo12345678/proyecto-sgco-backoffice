@@ -1,0 +1,49 @@
+<div class="component-container">
+
+  <div class="icon-container notifications-button" (click)="toggleNotificationsModal()" [title]="notificationBellTitle">
+    <span class="toolbar-icono notifications-button">
+      <i class="fas fa-bell notifications-button"></i>
+      <span class="bell-dot notifications-button" *ngIf="hasVisibleItems" [class.unseen]="hasUnreadItems"></span>
+    </span>
+  </div>
+
+  <div *ngIf="showNotifications" class="modal-notificaciones">
+    <div *ngIf="!hasVisibleItems && !loadingNotifications; else pendingActions" class="sin-alertas">
+
+      <div class="mensaje-sin-alertas">
+        <i class="fas fa-check check-sin-alertas"></i>
+        <h4 class="">
+          Sin tareas pendientes.
+        </h4>
+      </div>
+
+      <button class="boton-guardar boton-entendido-sin-alertas" (click)="toggleNotificationsModal()"> Cerrar</button>
+
+    </div>
+
+    <ng-template #pendingActions>
+      <div class="button-end">
+        <button *ngIf="hasVisibleItems" (click)="markAllAsRead()" [disabled]="!hasUnreadItems"
+          class="mark-all-as-read-msg notifications-button"> Marcar todas como leidas
+        </button>
+      </div>
+
+      <div class="notification-list">
+        <div *ngIf="visibleCbkNotifications.length > 0">
+          <app-alerta-item [item]="item" [isLoading]="loadingNotifications"
+            (ocultarClicked)="hideNotificationElement($event)" (gestionarClicked)="manageNotificationElement($event)"
+            *ngFor="let item of visibleCbkNotifications; trackBy: trackByFn" [@collapse]>
+          </app-alerta-item>
+        </div>
+
+        <div *ngIf="visibleCbkNotifications.length === 0 && loadingNotifications">
+          <app-alerta-item [item]="item" [isLoading]="true"
+            *ngFor="let item of placeholderNotifications; trackBy: trackByFn">
+          </app-alerta-item>
+        </div>
+      </div>
+
+    </ng-template>
+  </div>
+
+</div>

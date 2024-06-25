@@ -1,0 +1,25 @@
+<div class="tabla-content-pagination" [ngClass]="{'empty': (!isLoading || hasResponse) && totalRegistros == 0}" >
+  <div *ngIf="totalRegistros> 0" class="cantidad-resultados-tabla-contracargos">
+    {{ rangoInferior }} - {{ rangoSuperior }} de {{ totalRegistros}}
+  </div>
+
+  <div *ngIf="totalRegistros > 0" class="espacio"></div>
+
+  <div *ngIf="totalRegistros > 0" class="paginacion-tabla-contracargos">
+    <button class="pagination-button" [disabled]="paginaActual === 1" (click)="cambiarPagina(paginaActual - 1)">
+      <i class="fas fa-chevron-left"></i>
+    </button>
+
+    <ng-container *ngFor="let pagina of paginasArray()">
+      <span class="pagination-page" (click)="cambiarPagina(pagina)" [class.active]="pagina === paginaActual"
+        [ngClass]="{ 'boton-pagina-seleccionado': pagina === paginaActual }">
+        {{ pagina }}
+      </span>
+    </ng-container>
+
+    <button class="pagination-button" [disabled]="paginaActual === totalPaginas"
+      (click)="cambiarPagina(paginaActual + 1)">
+      <i class="fas fa-chevron-right"></i>
+    </button>
+  </div>
+</div>

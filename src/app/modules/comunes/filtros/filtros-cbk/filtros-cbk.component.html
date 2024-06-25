@@ -1,0 +1,110 @@
+<div class="container-filtros">
+  <button class="boton-desplegable-filtros" (click)="toggleFilterPopup()">Filtrar por<i>+</i></button>
+  <div class="filter-popup" *ngIf="mostrarModalFiltros">
+    <div class="filtros-opciones" [class.estados]="currentStage === stages.statusSelection">
+
+      <div *ngIf="currentStage !== stages.initial" class="filtros-header">
+        <button class="button-volver filter-button" (click)="changeFilterStage(stages.initial)">
+          <i class="fa fa-arrow-left filter-button" aria-hidden="true"></i> Volver
+        </button>
+        <div class="input-estados">
+          <input *ngIf="currentStage === stages.statusSelection" type="text" name="" id="" placeholder="Buscar estado"
+            [(ngModel)]="searchText">
+          <button *ngIf="currentStage === stages.statusSelection && searchText" class="clear-button filter-button"
+            (click)="clearSearch()">
+            <i class="fa fa-times filter-button"></i>
+          </button>
+        </div>
+      </div>
+
+      <div [ngSwitch]="currentStage">
+        <div *ngSwitchCase="stages.initial">
+          <div *ngIf="marcasValues && marcasValues.length > 0">
+            <button class="filtros-opciones-principal filter-button filter-category "
+              (click)="changeFilterStage(stages.brandSelection)">
+              Marca <span class="filter-button" *ngIf="numSelectedMarcas"> ({{numSelectedMarcas}}) </span>
+            </button>
+          </div>
+          <div *ngIf="etapasValues && etapasValues.length > 0">
+            <button class="filtros-opciones-principal filter-button filter-category"
+              (click)="changeFilterStage(stages.stageSelection)">
+              Etapa <span class="filter-button" *ngIf="numSelectedEtapas"> ({{numSelectedEtapas}}) </span>
+            </button>
+          </div>
+          <div *ngIf="estadosValues && estadosValues.length > 0">
+            <button class="filtros-opciones-principal filter-button filter-category"
+              (click)="changeFilterStage(stages.statusSelection)">
+              Estado <span class="filter-button" *ngIf="numSelectedEstados"> ({{numSelectedEstados}}) </span>
+            </button>
+          </div>
+        </div>
+
+        <div *ngSwitchCase="stages.brandSelection">
+          <div class="filtros-values">
+            <label class="checkbox-container">
+              <input type="checkbox" id="checkbox-seleccionar-todo-marca" name="checkbox-seleccionar-todo-marca"
+                [(ngModel)]="selectAllMarcas">
+              <span class="checkmark"></span>
+              <span class="filtros-opciones-principal">Select All</span>
+            </label>
+
+            <label *ngFor="let item of marcasValues; index as idx" class="checkbox-container">
+              <input type="checkbox" [id]="'opcion-filtro-marca'+idx" [name]="'checkbox-marca'+idx"
+                [(ngModel)]="item.selected" (change)="updateSelections()">
+              <span class="checkmark"></span>
+              <span class="filtros-opciones-principal">{{item.text}}</span>
+            </label>
+
+          </div>
+        </div>
+
+        <div *ngSwitchCase="stages.stageSelection">
+          <div class="filtros-values">
+            <label class="checkbox-container">
+              <input type="checkbox" id="checkbox-seleccionar-todo-etapa" name="checkbox-seleccionar-todo-etapa"
+                [(ngModel)]="selectAllEtapas">
+              <span class="checkmark"></span>
+              <span class="filtros-opciones-principal">Select All</span>
+            </label>
+
+            <label *ngFor="let item of etapasValues; index as idx" class="checkbox-container">
+              <input type="checkbox" [id]="'opcion-filtro-etapa'+idx" [name]="'checkbox-etapa'+idx"
+                [(ngModel)]="item.selected" (change)="updateSelections()">
+              <span class="checkmark"></span>
+              <span class="filtros-opciones-principal">{{item.visibleText}}</span>
+            </label>
+          </div>
+
+        </div>
+        <div *ngSwitchCase="stages.statusSelection">
+          <div class="filtros-values">
+            <label *ngIf="estadosValues.length > 0" class="checkbox-container">
+              <input type="checkbox" id="checkbox-seleccionar-todo-estado" name="checkbox-seleccionar-todo-estado"
+                [(ngModel)]="selectAllEstados">
+              <span class="checkmark"></span>
+              <span class="filtros-opciones-principal">Select All</span>
+            </label>
+
+            <label *ngFor="let item of estadosValues; index as idx" class="checkbox-container">
+              <input type="checkbox" [id]="'opcion-filtro-estado'+idx" [name]="'checkbox-estado'+idx"
+                [(ngModel)]="item.selected" (change)="updateSelections()">
+              <span class="checkmark"></span>
+              <span class="filtros-opciones-principal">{{item.visibleText}}</span>
+            </label>
+
+            <div *ngIf="estadosValues.length === 0" class="mensaje-tablas">
+              <span><i class="fas fa-exclamation-circle empty-filter-icon"></i>No se encontraron resultados</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+  <div class="limpiar-filtros" *ngIf="numOffilteredCategories > 0">
+    <button class="boton-desplegable-filtros limpiar" (click)="clearSelections()"> Limpiar filtros
+      ({{numOffilteredCategories}})</button>
+  </div>
+</div>

@@ -1,0 +1,194 @@
+<div class="filtros-content" id="filtros-desktop">
+
+  <span class="cantidad-registros">{{totalRegistrosPagination}} RESULTADOS</span>
+
+  <div class="espacio"></div>
+
+  <div class="filtros-content-element">
+
+    <div *ngIf="mostrarModalDocYForm || mostrarModalGestionarCaso" class="container-filtros">
+      <button class="boton-desplegable-filtros">Filtrar por<i>+</i></button>
+    </div>
+
+    <app-filtros-cbk *ngIf="!mostrarModalDocYForm && !mostrarModalGestionarCaso"
+      (onSelectionChange)="actualizarFiltrosMarcaEstado($event)" [initialSelection]="initialSelection"
+      [filtrosConfig]="filtrosConfig"></app-filtros-cbk>
+  </div>
+
+  <label class="input-fecha-label" for="fechaInicio">Desde:</label>
+  <input class="input-fecha" type="date" id="fechaInicio" name="fechaInicio" [(ngModel)]="objGetContracargo.fecha_desde"
+    (change)="validarFechas()">
+
+  <label class="input-fecha-label" for="fechaFin">Hasta:</label>
+  <input class="input-fecha" type="date" id="fechaFin" name="fechaFin" [(ngModel)]="objGetContracargo.fecha_hasta"
+    (change)="validarFechas()">
+
+</div>
+
+
+<hr>
+
+<div class="indicadores-content">
+  <div *ngIf="indicadores.length > 1" class="indicadores-menu">
+    <div *ngFor="let indicador of indicadores">
+      <app-indicadores [indicador]="indicador"></app-indicadores>
+    </div>
+  </div>
+
+  <div *ngIf="indicadores.length == 0" class="indicadores-menu">
+    <span>Cargando indicadores...</span>
+  </div>
+</div>
+
+
+
+<div class="tabla-content">
+  <div class="tabla-content-element">
+    <table class="tabla-contracargos-dashboard">
+      <thead>
+        <tr>
+          <th>CASO</th>
+          <th>ETAPA</th>
+          <th *ngFor="let estado of estadosCabecera" title="{{ estado.nombre }}">{{ estado.nombre }}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <ng-container *ngFor="let contracargo of contracargosDashboard">
+          <tr class="fila-progreso">
+            <td colspan="100%" class="progress-cell">
+              <div class="progress-line-wrapper">
+                <div class="progress-line-bg"></div>
+                <div class="progress-line" [ngClass]="getProgressClass(contracargo)"
+                  [style.width.%]="calcularProgreso(contracargo)">
+                  <div class="progress-bubble" [ngClass]="getProgressClass(contracargo)">
+                    {{ contracargo.diasCierre }}/{{contracargo.nombreMarca.toLowerCase() === 'visa' ? 30 : 45}} días
+                  </div>
+                </div>
+              </div>
+            </td>
+          </tr>
+
+          <tr class="fila-contracargo">
+            <td title="{{contracargo.marcaId}}" class="caso">
+              <div class="tabla-campo-caso-id">
+                <span *ngIf="contracargo.nombreMarca === 'MASTERCARD'">M</span>
+                <span *ngIf="contracargo.nombreMarca === 'VISA'">V</span>{{contracargo.idMarca}}
+              </div>
+              <div class="tabla-campo-caso-marca">{{contracargo.nombreMarca}}</div>
+            </td>
+            <td class="etapa">
+              {{ contracargo.nombreEtapa }}
+            </td>
+            <td *ngFor="let estado of estadosCabecera; let i = index" title="{{ estado.nombre }}"
+              [class.active]="i + 1 <= contracargo.idEstado" [class.current]="i + 1 === contracargo.idEstado">
+              <div *ngIf="i + 1 === contracargo.idEstado" class="estado-dashboard">
+                <span>{{ contracargo.nombreEstado }}</span>
+                <span class="estado-dashboard-icono"><i class="fas fa-user"></i> Analista</span>
+              </div>
+            </td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="tabla-content">
+  <div class="tabla-content-element">
+
+    <table class="tabla-contracargos" aria-label="Tabla Contracargos">
+      <thead>
+        <tr>
+          <th>CASO</th>
+          <th>RECEPCION <i title="Ordenar por recepcion" appSortIcon [id]="'recepcion'"
+              (sortChanged)="handleSort($event)"></i> </th>
+          <th>MOTIVO <i title="Ordenar por motivo" appSortIcon [id]="'motivoDesc'"
+              (sortChanged)="handleSort($event)"></i>
+          </th>
+          <th>COMERCIO <i title="Ordenar por comercio" appSortIcon [id]="'subcomercio'"
+              (sortChanged)="handleSort($event)"></i>
+          </th>
+          <th>ETAPA <i title="Ordenar por etapa" appSortIcon [id]="'etapaDesc'" (sortChanged)="handleSort($event)"></i>
+          </th>
+          <th>ESTADO <i title="Ordenar por estado" appSortIcon [id]="'estado'" (sortChanged)="handleSort($event)"></i>
+          </th>
+          <th title="Dias para cierre">DIAS PARA CIERRE <i appSortIcon [id]="''" (sortChanged)="handleSort($event)"></i>
+          </th>
+          <th>MONTO <i title="Ordenar por monto" appSortIcon [id]="'montoCbk'" (sortChanged)="handleSort($event)"></i>
+          </th>
+          <th title="Dias desde notificado">DIAS DESDE NOTIFIC <i title="Ordenar por dias" appSortIcon [id]="''"
+              (sortChanged)="handleSort($event)"></i>
+          </th>
+          <th>OPERACIONES </th>
+        </tr>
+      </thead>
+
+      <tbody *ngIf="objResContracargos.status == 'OK'">
+        <tr *ngFor="let contracargo of contracargos"
+          [class.registroSeleccionado]="casoSeleccionado.caso === contracargo.caso">
+          <td title={{contracargo.marcaId}} class="no-aplicar-estilos-campo-largo barra-color-verde">
+            <div class="tabla-campo-caso-id">
+              <span *ngIf="contracargo.marca=='MASTERCARD'">M</span><span
+                *ngIf="contracargo.marca=='VISA'">V</span>{{contracargo.marcaId}}
+            </div>
+            <div class="tabla-campo-caso-marca">{{contracargo.marca}}</div>
+          </td>
+          <td title={{formatearFecha(contracargo.recepcion)}}>{{formatearFecha(contracargo.recepcion)}}</td>
+          <td>{{contracargo.motivoCodigo}}</td>
+          <td [title]="contracargo.comercio + ' - ' + contracargo.subcomercio">{{contracargo.subcomercio}}</td>
+          <td title={{contracargo.etapaDesc}}>{{contracargo.etapaDesc}}</td>
+          <td title={{contracargo.estado}}>{{contracargo.estado}}</td>
+          <td>{{contracargo.diasParaCierre}}</td>
+          <td>$ {{formatearMonto(contracargo.montoCbk)}}</td>
+          <td>{{contracargo.diasDesdeNotificacion}}</td>
+          <td class="tabla-campo-gestionar">
+            <button (click)="clickOperacionesTabla(contracargo)" data-bs-toggle="modal"
+              data-bs-target="#modalGestionarCaso">
+              <span class="desaparecer">{{obtenerNombreBotonOperaciones(contracargo.estadoId)}}</span>
+              <i *ngIf="obtenerNombreBotonOperaciones(contracargo.estadoId) == 'Ver'"
+                class="fas fa-eye ojo-tabla-gestionar"></i>
+              <i *ngIf="obtenerNombreBotonOperaciones(contracargo.estadoId) == 'Gestionar'"
+                class="fas fa-wrench ojo-tabla-gestionar"></i>
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+
+      <tbody *ngIf="objResContracargos.message != 'Contracargos obtenidos correctamente'">
+
+    </table>
+  </div>
+
+  <div *ngIf="loadingTablaContracargos">
+    <div class="loading-wrapper loading-centered">
+      <div class="loading-text">Cargando</div>
+      <div class="loading-circle circle"></div>
+      <div class="loading-circle-small circle"></div>
+    </div>
+  </div>
+
+  <app-pagination [initialPaginationConfig]="paginationConfig" [isLoading]="loadingTablaContracargos"
+    [hasResponse]="!!objResContracargos.status" (onPageChange)="onPageChange($event)"></app-pagination>
+
+  <div *ngIf="objResContracargos.contracargos.length === 0 && objResContracargos.status"
+    class="tabla-content-paginacion vacia">
+    <div class="mensaje-tablas">
+      <span><i class="fas fa-exclamation-circle empty-table-icon"></i>{{objResContracargos.message}}</span>
+    </div>
+  </div>
+
+</div> -->

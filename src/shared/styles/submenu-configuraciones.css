@@ -1,0 +1,80 @@
+/* VISTA CONFIGURACIONES */
+.configuraciones-pagina{
+    display: flex;
+    justify-content: space-between;
+    margin: 47px 0px 0px 79px;
+}
+
+
+
+
+/* MENU IZQUIERDO CONFIGURACIONES */
+.sidebar-configuraciones {
+    height: 100%;
+    width: 330px;
+    box-shadow: 1px 0 1px rgba(0, 0, 0, 0.2);
+    justify-content: space-between;
+    flex-direction: column;
+    display: flex;
+    z-index: 1;
+    position: fixed;
+}
+
+.sidebar-configuraciones-titulo{
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 32px;
+
+    margin-top: 15px;
+    margin-left: 20px;
+}
+
+
+.sidebar-configuraciones-menu {
+    flex: 1;
+    margin-top: 10px;
+}
+
+.sidebar-configuraciones-menu-item {
+    border: none;
+}
+
+
+.sidebar-configuraciones-menu-item-button {
+    color: var(--color-secundario);
+    background-color: white;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 25px;
+
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;
+
+    border: none;
+    width: 100%;
+    text-align: left;
+    padding: 20px;
+}
+
+
+.sidebar-configuraciones-menu-item-button:hover{
+    background-color: #e2e5e9;
+}
+
+.sidebar-configuraciones-menu-item-button.seleccionado {
+    background-color: var(--color-6);
+}
+
+.icono-seleccionado{
+    align-self: flex-end; 
+    color: var(--color-secundario);
+}
+
+
+
+
+/* CONTENIDO CONFIGURACIONES */
+.contenedor-configuraciones{
+    margin-left: 27%;
+}

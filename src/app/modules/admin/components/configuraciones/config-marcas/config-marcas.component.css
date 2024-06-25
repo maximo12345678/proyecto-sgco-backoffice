@@ -1,0 +1,213 @@
+/*Contenedor configuracion */
+.contenedor-config-visa {
+  margin: 15px 0px 0px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  height: 90vh; /* El contenedor ocupa toda la pantalla vertical */
+}
+
+.title {
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 32px;
+}
+
+/*Botones */
+.config-botones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: auto; /*va hasta abajo de todo lo vertical*/
+  align-self: flex-end; /* Alinea los botones a la derecha */
+}
+
+.config-botones-item {
+  padding: 0px 12px;
+}
+
+/* Formulario */
+.formulario-config {
+  margin-top: 40px;
+}
+
+.title-input {
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 21px;
+}
+
+.title-input.boolean {
+  line-height: 10px;
+  padding-bottom: 15px;
+}
+.form-motivos-opciones-radio.boolean {
+  padding-bottom: 8px;
+}
+
+.options-radio {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 5px;
+  margin-top: 10px;
+}
+
+.options-radio-element {
+  margin-right: 65px;
+}
+
+.mensaje-satisfactorio-icono.error {
+  background-color: var(--color-error);
+}
+.mensaje-satisfactorio-icono.error i {
+  margin-left: 3px;
+}
+
+.submitButtonDisabled {
+  background-color: rgb(106, 155, 233);
+  color: white;
+}
+.submitButtonDisabled:hover {
+  background-color: rgb(106, 155, 233);
+  color: white;
+}
+.validation-alert {
+  color: red;
+}
+
+@media (max-width: 1145px) {
+  .config-botones {
+    padding-bottom: 20px;
+  }
+}
+
+.result-modal {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  min-width: 120px;
+  transform: translateX(-50%);
+  background-color: rgb(41, 205, 41);
+  color: white;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+  z-index: 999;
+}
+
+.result-modal .error {
+  background-color: red;
+}
+
+.custom-toast {
+  display: none;
+  z-index: 10;
+  position: absolute;
+  top: 65px;
+  right: 30px;
+  border-radius: 6px;
+  background: #fff;
+  padding: 10px 35px 15px 25px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  border-left: 8px solid #40f467;
+  overflow: hidden;
+  transform: translateX(calc(100% + 30px));
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.25, 1.35);
+}
+
+.custom-toast.error {
+  border-left: 8px solid var(--color-error);
+}
+
+.custom-toast.active {
+  display: block;
+  transform: translateX(0);
+}
+.toast-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin: 0 20px;
+}
+.message-text {
+  font-size: 20px;
+  font-weight: 600;
+}
+.text-1 {
+  color: #333;
+}
+.text-2 {
+  color: #666;
+  font-weight: 400;
+  font-size: 16px;
+}
+.toast-close {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  padding: 5px;
+  cursor: pointer;
+  opacity: 0.7;
+}
+.toast-close:hover {
+  opacity: 1;
+}
+.progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 100%;
+  background: #ddd;
+}
+.progress::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #40f467;
+}
+
+.progress.error::before {
+  background-color: var(--color-error);
+}
+
+.progress.active::before {
+  animation: progress 5s linear forwards;
+}
+@keyframes progress {
+  100% {
+    right: 100%;
+  }
+}
+.toast-btn {
+  padding: 10px 40px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  background-color: #40f467;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.toast-btn:hover {
+  background-color: #0fbd35;
+}
+
+.config-botones.right {
+  justify-content: end;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+
+.config-botones-item:last-of-type {
+  padding: 0;
+}

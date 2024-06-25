@@ -1,0 +1,27 @@
+[
+    {
+        "nombre": "Marca",
+        "id": 0,
+        "opciones": [
+            {
+                "value": "Seleccionar todo",
+                "id": 0,
+                "selected": true
+            },
+            {
+                "value": "Mastercard",
+                "id": 1,
+                "selected": true
+            },
+            {
+                "value": "Visa",
+                "id": 2,
+                "selected": true
+            }
+        ]
+    }
+
+]
+
+
+

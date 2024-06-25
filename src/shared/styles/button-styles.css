@@ -1,0 +1,226 @@
+/* Buton cancelar sin fondo, letra azul*/
+.boton-cancelar {
+    color: var(--color-secundario);
+    background-color: white;
+    border: none;
+    font-weight: 500;
+    size: 13px;
+    line-height: 21.03px;
+}
+
+
+
+/*Boton desahilitado*/
+.boton-deshabilitado {
+    background-color: #ccc;
+    /* Cambia el color de fondo a gris */
+    cursor: not-allowed;
+    /* Cambia el cursor a indicar que no se puede interactuar */
+
+    position: relative;
+    overflow: hidden; /* Para mantener el spinner dentro del botón */
+}
+
+/* Estilo para los inputs deshabilitados (opcional) */
+input:disabled {
+    /* Cambia el color de fondo a un tono más claro */
+    color: #777;
+    border: solid 1px #777; 
+    /* Cambia el color del texto para indicar que está deshabilitado */
+}
+
+.bordesGrises{
+    border: solid 1px #777; 
+    color: #777;
+}
+
+
+.bordesAzules{ /*se la agregamos al boton de notificar, solo cuando esta habilitado. mientras tanto usa bordesGrises*/
+    color: var(--color-secundario);
+    border: solid 1px var(--color-secundario);
+    background-color: white;
+}
+
+
+/* Boton guardar cambios azul*/
+.boton-guardar {
+    background-color: var(--color-secundario);
+    color: white;
+    border: none;
+    font-weight: 500;
+    size: 13px;
+    line-height: 21.03px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 5px;
+}
+
+.boton-guardar:disabled {
+    background-color: #ccc;
+}
+
+/* BOTON */
+.boton-notificar {
+    border-radius: 5px;
+    padding: 10px 30px 10px 30px;
+    font-weight: 500;
+    size: 13px;
+    line-height: 21.03px;
+    transition: all 0.5s;
+}
+
+.boton-notificar:hover {
+    background-color: var(--color-apoyo1);
+}
+
+.boton-notificar.boton-disabled {
+  background-color: var(--color-apoyo1);
+  color: #aac7e1;
+}
+
+.boton-gestion-caso {
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 30px 10px 30px;
+    font-weight: 500;
+    size: 13px;
+    line-height: 21.03px;
+    transition: all 0.5s;
+}
+
+.boton-gestion-caso:hover {
+    color: var(--color-apoyo3);
+}
+
+
+
+.boton-descargar-todo {
+    color: white;
+    background-color: rgba(18, 45, 64, 0.7);
+    border: solid 1px white;
+    border-radius: 5px;
+    padding: 10px 30px 10px 30px;
+    font-weight: 400;
+    size: 13px;
+    line-height: 21.03px;
+    transition: all 0.5s;
+    cursor: pointer;
+}
+
+
+
+
+
+/* BOTONERA FILTRO FECHAS */
+.filtros-fechas {
+    height: 35px;
+    width: 330px;
+    background-color: var(--color-6);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    padding: 0px 3px 0px 3px;
+    margin-left: 50px;
+    gap: 0;
+}
+
+.filtros-fechas-boton {
+    border: none;
+    background-color: var(--color-6);
+    color: var(--color-secundario);
+    border-radius: 10px;
+    padding: 5px, 12px, 5px, 12px;
+    gap: 10px;
+    height: 90%;
+    width: 100%;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 21px;
+}
+
+
+.filtros-fechas-boton.seleccionado {
+    background-color: white;
+}
+
+
+
+
+
+
+/* BOTON DESCARGA */
+.boton-descargar {
+    width: 43px;
+    height: 43px;
+    background: #FFFFFF;
+    border: 1px solid var(--color-secundario);
+    border-radius: 5px;
+    color: var(--color-secundario);
+    margin-right: 12px;
+}
+
+.boton-descargar:hover {
+    background-color: var(--color-apoyo1);
+}
+
+
+
+
+
+
+
+
+
+
+
+/* BOTON ESTADO */
+.estado {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.estado-nombre {
+    border: none;
+    width: 196px;
+    height: 43px;
+    background-color: white;
+    color: var(--color-secundario);
+
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+.estado-cantidad {
+    background-color: white;
+    color: black;
+    padding: 2px 10px;
+    border: 0.5px solid #B3BCC9;
+    border-radius: 10px;
+
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+
+.estado-nombre:hover {
+    background-color: var(--color-apoyo1);
+}
+
+.estado-nombre.seleccionado {
+    background-color: var(--color-primario);
+    color: white;
+}
+
+.estado-cantidad.seleccionado {
+    color: var(--color-variante-primario);
+}
+

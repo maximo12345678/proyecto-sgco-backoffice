@@ -1,0 +1,41 @@
+<div class="modal-overlay show">
+  <div class="modal">
+
+    <div class="mensaje-satisfactorio">
+
+      <div *ngIf="isLoading" class="loading-container">
+        <div class="loading-wrapper">
+          <div class="loading-text">Cargando</div>
+          <div class="loading-circle circle"></div>
+          <div class="loading-circle-small circle"></div>
+        </div>
+      </div>
+
+      <div class="mensaje-satisfactorio-icono">
+        <i class="fas fa-check"></i>
+      </div>
+      <div class="mensaje-satisfactorio-texto">{{title}}</div>
+      <br>
+      <div><b>{{subtitle}}</b></div>
+      <div *ngIf="accionIrreversible">Esta acción es irreversible</div>
+      <div class="espacio-abajo"></div>
+      <div class="modal-datos-contracargo-content-botones">
+        <div class="espacio"></div>
+
+        <div class="modal-datos-contracargo-content-botones-item">
+          <button class="boton-notificar bordesAzules" (click)="onCancelOperation()">Cancelar</button>
+        </div>
+
+        <div class="espacio-izquierda"></div>
+
+        <div class="modal-datos-contracargo-content-botones-item">
+          <button class="boton-gestion-caso primario" (click)="onConfirmAction()"> {{textoBotonOk}}
+          </button>
+        </div>
+
+
+      </div>
+    </div>
+
+  </div>
+</div>

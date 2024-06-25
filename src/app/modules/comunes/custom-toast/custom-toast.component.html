@@ -1,0 +1,18 @@
+  <div class="custom-toast" [class.active]="showModal" [class.error]="!success">
+    <div class="toast-content">
+      <div *ngIf="success" class="mensaje-satisfactorio-icono">
+        <i class="fas fa-check"></i>
+      </div>
+      <div *ngIf="!success" class="mensaje-satisfactorio-icono error">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="message">
+        <span class="message-text text-1"> {{success ? 'Operacion Exitosa' : 'Error'}} </span>
+        <span class="message-text text-2">{{resultMessage}}</span>
+      </div>
+    </div>
+    <button class="modal-close" (click)="closeModal()">
+      <i class="fas fa-times toast-close"></i>
+    </button>
+    <div class="progress" [class.active]="showModal" [class.error]="!success"></div>
+  </div>

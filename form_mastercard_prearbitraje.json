@@ -1,0 +1,21 @@
+{
+    "etapa_id": 4,
+    "etapa_nombre": "Configuracion pre-arbitraje mastercard",
+    "etapa_descripcion": "Configuracion pre-arbitraje mastercard",
+    "marca_id": 1,
+    "path_evidencia": "",
+    "etapa_campos": [
+        {
+            "id": "1",
+            "tipo": "text",
+            "label": "Memo (observacion)",
+            "dependencia": "null",
+            "placeholder": "null",
+            "validacion": {
+                "requerido": "true"
+            },
+            "selected_value": "",
+            "options": []
+        }
+    ]
+}

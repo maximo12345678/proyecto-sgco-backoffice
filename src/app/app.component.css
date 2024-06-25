@@ -1,0 +1,80 @@
+/*Pantalla entera login*/
+.contenedor-login{
+    margin: 0;
+    background-color: var(--color-apoyo1);
+    margin-top: auto;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Cuadro central login*/
+.cuadro-login{
+    background-color: #fff;
+    padding: 45px 164px 56px 164px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cuadro-login-titulo{
+    color: var(--color-secundario);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+}
+
+.cuadro-login-subtitulo{
+    color: var(--color-secundario);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 25px;
+}
+
+.cuadro-login-logoKlap{
+    width: 200px;
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+
+
+
+/* Formulario login*/
+.form-login {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.posicion-boton-ingresar{
+    margin-top: 20px;
+}
+
+
+
+.error-form{
+    color: red;
+}
+
+
+
+
+
+@media (max-width: 580px){
+    .cuadro-login{
+        padding: 10px 34px 26px 40px;
+    }
+}

@@ -1,0 +1,240 @@
+.titulo-grupos {
+  margin: 55px 0px 0px 105px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 32px;
+  color: #002b49;
+}
+
+.herramientas-content {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: row;
+}
+
+.boton-agregar-categoria {
+  background-color: var(--color-secundario);
+  color: white;
+  border: none;
+  font-weight: 400;
+  size: 13px;
+  line-height: 21.03px;
+  padding: 10px 40px 10px 30px;
+  border-radius: 5px;
+}
+
+.boton-agregar-categoria-value {
+  margin-left: 8px;
+}
+
+.caja-form-categoria {
+  margin-top: 12px;
+  border-radius: 10px;
+  padding: 20px 10px 10px 20px;
+  display: flex;
+  flex-direction: column;
+  height: 88vh;
+  box-shadow: none;
+}
+
+.caja-form-categoria-content {
+  margin-top: 20px;
+  padding: 16;
+}
+
+.config-botones {
+  padding-top: 8px;
+}
+
+.subtitulo-categoria {
+  color: var(--color-secundario);
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 32px;
+}
+
+.contenedor-criterios {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-6);
+  margin-top: 25px;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.contenedor-criterios-element {
+  margin-left: 20px;
+}
+
+/*Pequeño contenedor para que el input de tipo radio y el boton de eliminar queden al lado*/
+.criterio-eliminar {
+  display: flex;
+  flex-direction: row;
+}
+
+.titulo-grupo-seleccionado {
+  color: var(--color-secundario);
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 32px;
+}
+
+.options-checkbox-element {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.options-checkbox-element input {
+  display: none;
+}
+
+.checkmark {
+  width: 20px;
+  height: 20px;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-right: 8px;
+  position: relative;
+}
+
+.options-checkbox-element input:checked + .checkmark:after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container-indicador-actualizacion-criterios {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.mensaje-satisfactorio-boton-entendido {
+  background-color: var(--color-primario);
+  color: var(--color-7);
+}
+
+/* flecha atras vista responsiva, oculta en pantallas anchas */
+.arrow-modal-close {
+  display: none;
+}
+
+.loading-wrapper {
+  z-index: 999;
+  position: fixed;
+}
+
+.tabla-grupos thead th:first-child,
+.tabla-grupos tbody td:first-child {
+  width: 50%;
+  max-width: 480px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* responsividad modal edit criterios*/
+@media (max-width: 670px) {
+  .elemento-ocultable {
+    display: none;
+  }
+
+  .modal-content {
+    padding-top: 64px;
+    padding-bottom: 64px;
+    width: 100%;
+  }
+  .config-botones {
+    padding-top: 20px;
+    padding-bottom: 48px;
+  }
+
+  .modal-content-titulo {
+    margin-left: 40px;
+  }
+
+  .contenedor-criterios {
+    padding: 10px;
+  }
+
+  .contenedor-criterios-element {
+    margin-left: 0px;
+  }
+
+  .checkmark {
+    width: 20px;
+  }
+  .caja-form-categoria {
+    padding: 4px;
+  }
+
+  .caja-form-categoria-content {
+    border: solid 1px var(--color-6);
+    height: 77vh;
+    overflow-x: scroll;
+    padding: 8px;
+    border-radius: 8px;
+  }
+  .modal-content-cabecera {
+    padding-bottom: 8px;
+  }
+  .arrow-modal-close {
+    display: block;
+    position: absolute;
+    top: 64px;
+    left: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    color: var(--color-secundario);
+    background-color: var(--color-apoyo1);
+  }
+  .arrow-modal-close:hover {
+    background-color: var(--color-5);
+  }
+}
+
+/* responsividad, tabla vista mobile / pantallas angostas */
+@media (max-width: 670px) {
+  .tabla-content {
+    margin-left: 24px;
+  }
+
+  .tabla-campo-gestionar button {
+    background-color: #00000000;
+  }
+
+  /*Responsive ojo grande de gesiontar caso*/
+  .tabla-content .ojo-tabla-gestionar {
+    margin-left: 22px;
+    font-size: 1.3rem;
+  }
+
+  .titulo-grupos {
+    margin: 0 0 0 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  .tabla-content .ojo-tabla-gestionar {
+    margin-left: 16px;
+  }
+}
+@media (max-width: 400px) {
+  .tabla-content .ojo-tabla-gestionar {
+    margin-left: 6px;
+  }
+  .checkmark {
+    width: 28px;
+  }
+}

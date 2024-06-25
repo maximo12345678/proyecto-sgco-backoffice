@@ -1,0 +1,104 @@
+<div class="contenedor-config-comercio">
+  <h3 class="title"> Configurar monto mínimo y débito inicial</h3>
+
+  <div class="filtros-content" id="filtros-desktop">
+
+  </div>
+  <div class="actions-container" [class.monto-input-visible]="!noneSelected">
+    <div class="mass-editor-container" [class.hidden]="noneSelected">
+      <div class="espacio"></div>
+      <div class="content-config-monto">
+        <div>
+          <div class="monto-input-wrapper" [class.darker]="!!montoInput">
+            <input type="text" class="monto-input" placeholder="Monto mínimo" [(ngModel)]="montoInput"
+              name="montoInput">
+            <div *ngIf="isInputInvalid" class="monto-error-message">Solo valores enteros no negativos.</div>
+          </div>
+
+          <div class="options-radio col">
+            <div class="options-radio-element">
+              <label for="option1" class="checkbox-monto-comercio">
+                <input class="custom-checkbox" type="checkbox" id="option1" name="option1"
+                  [(ngModel)]="debitoInicialActivado" #booleanField="ngModel">
+                <span class="checkmark"></span>
+                <span> Débito Inicial Activado
+                </span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="boton-guardar-container">
+          <button class="button boton-guardar" [disabled]="botonAplicarDeshabilitado"
+            (click)="openModalEntera()">Aplicar</button>
+        </div>
+      </div>
+    </div>
+    <app-buscador class="align-end" (onSearchChange)="onSearch($event)" [placeholder]="'Buscar comercio'"
+      [inputWidthPx]="300"></app-buscador>
+  </div>
+
+  <app-modal-entera *ngIf="mostrarModalConfirmacion" [title]="modalParam1" [subtitle]="modalParam2"
+    (cancelOperation)="closeModalEntera()" (confirmAction)="aplicarConfiguraciones()"></app-modal-entera>
+
+  <app-modal-gestion-config *ngIf="mostrarModalGestionar" (closeModalEvent)="onModalClose()"
+    [comercio]="comercioSeleccionado"></app-modal-gestion-config>
+
+  <app-custom-toast *ngIf="showToast" [resultMessage]="mensajeResultadoPutMasivo" [success]="putMasivoOk"
+    (toastFinished)="resetToastVars()"></app-custom-toast>
+
+  <div class="espacio"></div>
+
+  <div class="tabla-content">
+    <div class="tabla-content-element">
+      <table class="tabla-contracargos" aria-label="Tabla Comercios">
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" id="check-all-n" name="check-all-i" [(ngModel)]="allSelected" ngDefaultControl>
+            </th>
+
+            <th>Comercio <i appSortIcon [id]="'nombre'" (sortChanged)="handleSort($event)"></i></th>
+            <th>Debito Inicial<i appSortIcon [id]="'debitoInicial'" (sortChanged)="handleSort($event)"></i></th>
+            <th>Monto Mínimo<i appSortIcon [id]="'montoMinimo'" (sortChanged)="handleSort($event)"></i></th>
+            <th>Gestionar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let comercio of comerciosCheck; index as idx">
+            <td><input type="checkbox" [id]="'cbx'+idx" [name]="'ncbx'+idx" [(ngModel)]="comercio.selected"></td>
+            <td>{{ comercio.nombre }}</td>
+            <td>{{ comercio.debitoInicial ? 'Activado' : 'Desactivado' }}</td>
+            <td>{{ formatearMonto(comercio.montoMinimo) }}</td>
+            <td class="tabla-campo-gestionar">
+              <button (click)="openModalGestionarSubcomercio(comercio)" data-bs-toggle="modal"
+                data-bs-target="#modalGestionarCaso">
+                <span class="desaparecer">Gestionar</span>
+                <i class="fas fa-wrench ojo-tabla-gestionar"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+
+    <div *ngIf="loadingComercios">
+      <div class="loading-wrapper">
+        <div class="loading-text">Cargando</div>
+        <div class="loading-circle circle"></div>
+        <div class="loading-circle-small circle"></div>
+      </div>
+    </div>
+
+    <app-pagination [initialPaginationConfig]="paginationConfig" [isLoading]="loadingComercios"
+      (onPageChange)="onPageChange($event)"></app-pagination>
+    <div *ngIf="!loadingComercios && mensajeRespuestaComercios && comercios.length === 0" class="tabla-content-paginacion vacia">
+      <div class="mensaje-tablas">
+        <span><i class="fas fa-exclamation-circle"></i> {{mensajeRespuestaComercios}}</span>
+      </div>
+    </div>
+
+  </div>
+  <div class="helpmeee"></div>
+</div>

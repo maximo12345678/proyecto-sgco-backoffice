@@ -1,0 +1,389 @@
+/* INPUT label transicion */
+.input-container {
+    position: relative;
+    margin-top: 5px;
+    /* Espacio entre inputs */
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    /* Línea inferior */
+    outline: none;
+    border-top: 1px solid #eeeeee;
+}
+
+.input-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 10px 12px;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 21px;
+    color: var(--color-secundario);
+    margin-left: 10px;
+    transform: translateY(0);
+    opacity: 0;
+}
+
+.input-field:focus+.input-label,
+.input-field:not(:placeholder-shown)+.input-label {
+    top: -23px;
+    transform: translateY(0);
+    opacity: 1;
+
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 21px;
+    color: var(--color-secundario);
+}
+
+
+.inputs-fila {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+
+
+/* TEXTAREA OBSERVACIONES */
+.input-observaciones {
+    margin-top: 10px;
+    width: 100%;
+    max-height: 118px;
+    border: 1px solid var(--color-apoyo2);
+    border-radius: 5px;
+    padding: 9px 10px 9px 10px;
+}
+
+
+
+
+
+/* INPUTS RADIO */
+/* Ocultamos el input radio original */
+input[type="radio"] {
+    display: none;
+}
+
+
+/* Estilos del círculo del input radio */
+.checkmark {
+    display: flex;
+    justify-content: center;
+    /* Centrar horizontalmente */
+    align-items: center;
+    /* Centrar verticalmente */
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-secundario);
+    border-radius: 50%;
+    left: 0;
+    margin-right: 10px;
+
+}
+
+/* Estilos para cuando el radio está seleccionado */
+input[type="radio"]:checked+.checkmark::before {
+    content: "";
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-secundario);
+    /* Color del círculo seleccionado */
+    border-radius: 50%;
+}
+
+.options-radio {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+.options-radio-element {
+    margin-right: 65px;
+    display: flex;
+    align-items: center;
+}
+
+
+.options-horizontales {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    margin-left: 5px;
+}
+
+
+
+/* LISTA DESPLEGABLE */
+.lista-desplegable {
+    position: relative;
+    display: inline-block;
+}
+
+.lista-desplegable-button {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 9px 10px;
+    gap: 50px;
+
+    width: 400px;
+
+    box-sizing: border-box;
+    border: 0.5px solid var(--color-apoyo2);
+    border-radius: 5px;
+}
+
+.lista-desplegable-button.open .lista-desplegable-button i {
+    transform: rotate(180deg);
+    color: var(--color-primario);
+}
+
+.lista-desplegable-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 400px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 3px #F1F1F1;
+    background-color: var(--color-apoyo1);
+    z-index: 90;
+}
+
+.lista-desplegable-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.lista-desplegable-item:hover {
+    background-color: var(--color-6);
+}
+
+.rotate {
+    transform: rotate(180deg);
+}
+
+.change-color {
+    color: var(--color-primario);
+}
+
+.lista-desplegable.open .lista-desplegable-list {
+    display: block;
+}
+
+
+
+
+
+
+/* INPUT CHECKBOX*/
+.checkbox-group {
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.checkbox-container {
+    display: flex;
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+    /* Oculta el checkbox nativo */
+}
+
+.checkbox-container .checkmark {
+    max-width: 20px;
+    max-height: 20px;
+    min-width: 20px;
+    min-height: 20px;
+    border: 2px solid var(--color-secundario);
+    /* Borde del cuadro */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    margin-right: 10px;
+    display: inline-block;
+    position: relative;
+}
+
+.checkbox-container input[type="checkbox"]:checked+.checkmark::before {
+    content: "\2713";
+    /* Unicode para el símbolo de marca de verificación */
+    font-size: 15px;
+    font-weight: 700;
+    color: #fff;
+    /* Color del símbolo de marca de verificación cuando está seleccionado */
+    position: absolute;
+    top: -2px;
+    margin-bottom: 3px;
+    left: 3px;
+}
+
+.checkbox-container input[type="checkbox"]:checked+.checkmark {
+    background-color: var(--color-secundario);
+    /* Color de fondo cuando está seleccionado */
+    border-color: var(--color-secundario);
+    /* Borde cuando está seleccionado */
+    color: #fff;
+    /* Color del texto cuando está seleccionado */
+}
+
+
+
+
+
+/* BUSCADOR */
+.buscador-input {
+    display: flex;
+    align-items: center;
+    padding: 8px;
+
+    width: 420px;
+
+    background: #FFFFFF;
+    border: 0.5px solid var(--color-apoyo2);
+    border-radius: 5px;
+}
+
+.buscador-input i {
+    margin-right: 8px;
+    color: var(--color-primario);
+}
+
+.buscador-input input {
+    border: none;
+    outline: none;
+    color: black;
+}
+
+
+
+
+
+.label-input-form {
+    font-size: 18px;
+    color: black;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+/*INPUT FECHA*/
+/* Clase para los inputs de fecha */
+.input-fecha {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 15%;
+    box-sizing: border-box;
+    margin-right: 15px;
+    /* Para incluir el padding en el ancho total del input */
+}
+
+.fecha-alargado {
+    width: 100%;
+}
+
+.text-alargado {
+    width: 100%;
+}
+
+
+/* Estilo cuando el input está enfocado */
+.input-fecha:focus {
+    outline: none;
+    border-color: var(--color-secundario);
+    /* Cambiar color de borde al estar enfocado */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+    /* Sombra al estar enfocado */
+}
+
+.input-fecha-label {
+    margin-right: 5px;
+}
+
+.checkbox-monto-comercio {
+	display: inline-flex;
+	align-items: center;
+	padding: 10px 0;
+}
+
+.monto-input {
+    text-align: start;
+    width: 220px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    border-radius: 8px;
+    margin-right: 12px;
+    border: 0.5px solid var(--color-apoyo2);
+}
+
+.monto-input-wrapper {
+    position: relative;
+}
+
+.monto-input-wrapper::before {
+    content: '$';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.monto-error-message {
+    position: absolute;
+    top: 0;
+    left: 8px;
+    font-size: 0.8rem;
+    color: red;
+}
+
+
+
+
+
+@media(max-width: 480px) {
+    .lista-desplegable-button {
+        width: 300px;
+    }
+
+    .lista-desplegable-list {
+        width: 300px;
+    }
+}
+
+
+@media(max-width: 395px) {
+    .lista-desplegable-button {
+        width: 270px;
+    }
+
+    .lista-desplegable-list {
+        width: 270px;
+    }
+}

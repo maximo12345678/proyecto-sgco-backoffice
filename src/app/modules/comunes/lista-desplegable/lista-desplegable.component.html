@@ -1,0 +1,7 @@
+<select [disabled]="inputDisabled" placeholder="Seleccione una opcion" [(ngModel)]="selectedValue" (change)="onSelectOption(selectedValue)" class="lista-desplegable-select">
+    <option disabled selected>Seleccione una opción</option>
+    <option *ngFor="let option of options" [ngValue]="option">{{ option.label }}</option>
+</select>
+  
+
+

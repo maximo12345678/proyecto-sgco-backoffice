@@ -1,0 +1,22 @@
+.tabla-content-pagination {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  padding: 12px;
+}
+
+.tabla-content-pagination.empty {
+  margin-top: 0;
+  padding: 3px;
+}
+
+@media (max-width: 670px) {
+  .tabla-content-pagination {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+  }
+  .tabla-content-pagination .espacio {
+    display: none;
+  }
+}

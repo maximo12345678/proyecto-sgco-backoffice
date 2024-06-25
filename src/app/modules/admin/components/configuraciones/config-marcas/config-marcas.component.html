@@ -1,0 +1,95 @@
+<div class="contenedor-config-visa">
+  <h3 class="title">Configurar Tiempo de espera {{ marcaName }}</h3>
+
+  <div *ngIf="loadingConfiguraciones">
+    <div class="loading-wrapper">
+      <div class="loading-text">Cargando</div>
+      <div class="loading-circle circle"></div>
+      <div class="loading-circle-small circle"></div>
+    </div>
+  </div>
+
+  <div class="custom-toast" [class.active]="showModal" [class.error]="!sucessfulUpdate">
+    <div class="toast-content">
+      <div *ngIf="sucessfulUpdate" class="mensaje-satisfactorio-icono">
+        <i class="fas fa-check"></i>
+      </div>
+      <div *ngIf="!sucessfulUpdate" class="mensaje-satisfactorio-icono error">
+        <i class="fas fa-times"></i>
+      </div>
+      <div class="message">
+        <span class="message-text text-1"> {{sucessfulUpdate ? 'Operacion Exitosa' : 'Error'}} </span>
+        <span class="message-text text-2">{{resultMessage}}</span>
+      </div>
+    </div>
+    <button class="modal-close" (click)="closeModal()">
+      <i class="fas fa-times toast-close"></i>
+    </button>
+    <div class="progress" [class.active]="showModal" [class.error]="!sucessfulUpdate"></div>
+  </div>
+
+<div class="config-form-wrapper">
+<form *ngIf="!loadingConfiguraciones" #configForm="ngForm">
+    <div class="formulario-config">
+      <div *ngFor="let item of configs; let idx = index">
+        <div class="title-input">Tiempo de espera maximo en dias por {{ item.nombre }}</div>
+        <div class="input-container">
+          <input placeholder="EJ. 10" type="number" name="{{ 'dias' + idx }} " id="{{ 'dias' + idx }}"
+            class="input-field" [value]="item.diasMaximos" [(ngModel)]="item.diasMaximos" [min]="MIN_DIAS"
+            [max]="MAX_DIAS" required #days="ngModel">
+          <label *ngIf="!item.diasMaximos" for="{{ 'dias' + idx }}" class="input-label">Ingresar Dias</label>
+
+          <div *ngIf="days.invalid && (days.dirty || days.touched)" class="validation-alert">
+            <div *ngIf="days.errors?.['required'] && days.dirty"> Campo obligatorio</div>
+            <div *ngIf="(days.errors?.['max'] || days.errors?.['min'] ) && days.dirty"> Debe ingresar un valor entre
+              {{MIN_DIAS}} y {{MAX_DIAS}}</div>
+          </div>
+        </div>
+        <hr />
+      </div>
+
+      <div *ngIf="marcaId == MARCA_ID_VISA">
+        <div *ngFor="let item of booleanFields" class="form-group">
+          <label class="title-input boolean" for="option3">{{item.fieldDescription}} </label>
+          <div class="form-motivos-opciones-radio boolean">
+            <div class="form-motivos-opciones-radio-element">
+              <label for="option3">
+                <input type="radio" id="option3" name="option2" [(ngModel)]="item.value" required
+                  #booleanField="ngModel" [value]="true">
+                <span class="checkmark"></span>
+                <span>Si</span>
+              </label>
+            </div>
+            <div class="form-motivos-opciones-radio-element">
+              <label for="option4">
+                <input type="radio" id="option4" name="option2" [(ngModel)]="item.value" required
+                  #booleanField="ngModel" [value]="false">
+                <span class="checkmark"></span>
+                <span>No</span>
+              </label>
+            </div>
+            <div *ngIf="booleanField.invalid && configForm.dirty" class="validation-alert">
+              <div *ngIf="booleanField.errors?.['required']"> * Campo requerido</div>
+            </div>
+          </div>
+        </div>
+        <hr *ngIf="booleanFields && booleanFields.length > 0"/>
+      </div>
+
+    </div>
+    <div class="config-botones right">
+      <div class="config-botones-item">
+        <button (click)="restoreValues()" class="boton-cancelar">Cancelar</button>
+      </div>
+      <div class="config-botones-item">
+        <button (click)="submitForm()" class="boton-guardar"
+          [class.submitButtonDisabled]="!canSubmitForm || configForm.invalid"
+          [disabled]="!canSubmitForm || configForm.invalid">Guardar cambios</button>
+      </div>
+    </div>
+  </form>
+</div>
+  
+</div>
+
+<div class="espacio-arriba"></div>

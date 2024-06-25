@@ -1,0 +1,160 @@
+<h2 class="titulo-grupos">Mantenedor de Criterios de validación por MCC</h2>
+<div class="herramientas-content">
+
+  <div class="espacio"></div>
+  <app-buscador [placeholder]="'Buscar por Categoría o Código'" (onSearchChange)="onSearch($event)"></app-buscador>
+
+</div>
+
+<div *ngIf="loadingTablaGrupos">
+  <div class="loading-wrapper">
+    <div class="loading-text">Cargando</div>
+    <div class="loading-circle circle"></div>
+    <div class="loading-circle-small circle"></div>
+  </div>
+</div>
+
+<div class="tabla-content">
+  <div class="tabla-content-element">
+    <table class="tabla-grupos" aria-label="Tabla Grupos">
+      <thead>
+        <tr>
+          <th>CATEGORIAS <i appSortIcon [id]="'descripcion'" (sortChanged)="handleSort($event)"></i></th>
+          <th>CÓDIGO MCC <i appSortIcon [id]="'codigoMcc'" (sortChanged)="handleSort($event)"></i></th>
+          <th class="criterios-col">
+            CRITERIOS <span class="elemento-ocultable"> DE VALIDACION </span><i appSortIcon [id]="''"
+              (sortChanged)="handleSort($event)"></i>
+          </th>
+          <th>EDITAR <span class="elemento-ocultable">GRUPO</span></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let grupoMccList of grupos" [class.registroSeleccionado]="
+            grupoSeleccionado.grupoMcc.id === grupoMccList.grupoMcc.id
+          ">
+          <td [title]="grupoMccList.grupoMcc.descripcion">{{ grupoMccList.grupoMcc.descripcion }}</td>
+          <td>{{ grupoMccList.grupoMcc.codigoMcc }}</td>
+          <td class="criterios-col">{{ grupoMccList.cantidad_criterios }}</td>
+          <td class="tabla-campo-gestionar">
+            <button (click)="clickEditarGrupo(grupoMccList)" data-bs-toggle="modal"
+              data-bs-target="#modalGestionarCaso">
+              <span class="desaparecer">Editar</span>
+              <i class="fas fa-pencil-alt ojo-tabla-gestionar"></i>
+            </button>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+
+  <app-pagination [initialPaginationConfig]="paginationConfig" [isLoading]="loadingTablaGrupos"
+    (onPageChange)="onPageChange($event)"></app-pagination>
+  <div *ngIf="!loadingTablaGrupos && respuestaGrupos.message && respuestaGrupos.totalItems == 0"
+    class="tabla-content-paginacion vacia">
+    <div class="mensaje-tablas">
+      <span><i class="fas fa-exclamation-circle"></i> {{respuestaGrupos.message}}</span>
+    </div>
+  </div>
+
+</div>
+
+<!-- Modal Gestionar Caso -->
+<div class="modal-container" *ngIf="mostrarModalGestionarCaso">
+  <div class="modal-content">
+    <div class="modal-content-cabecera">
+
+      <button class="arrow-modal-close" (click)="clickCerrarModal()">
+        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+      </button>
+
+      <span class="modal-content-titulo">Categoria</span>
+      <button class="modal-close" (click)="clickCerrarModal()">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="modal-content-cuerpo">
+      <div class="cuerpo-scrollable">
+        <div *ngIf="cambioEstado && !mensajeResultadoOperacion" class="container-indicador-actualizacion-criterios">
+          <div class="loading-historial-caso">
+            <div class="spinner"></div>
+          </div>
+        </div>
+        <div class="caja-form-categoria" *ngIf="!cambioEstado">
+          <div class="caja-form-categoria-content">
+            <div class="form-group">
+              <div class="input-container">
+                <label for="" class="titulo-grupo-seleccionado">{{
+                  grupoSeleccionado.grupoMcc.descripcion
+                  }}</label>
+              </div>
+            </div>
+
+            <span class="subtitulo-categoria">Criterios de validacion</span>
+
+            <div *ngFor="let criterio of criterios; let i = index" class="contenedor-criterios">
+              <div class="contenedor-criterios-element">
+                <div class="input-container">
+                  <input placeholder="Ingrese criterio" type="text" id="text" class="input-field"
+                    [(ngModel)]="criterio.descripcion" />
+                  <label for="text" class="input-label">Criterio de validación</label>
+                </div>
+              </div>
+
+              <div class="contenedor-criterios-element">
+                <div class="criterio-eliminar">
+                  <div class="options-radio">
+                    <label [for]="'option' + i" class="options-checkbox-element">
+                      <input type="checkbox" [id]="'option' + i" [(ngModel)]="criterios[i].obligatorio" />
+                      <span class="checkmark"></span>
+                      <span>Asignar como criterio obligatorio</span>
+                    </label>
+                  </div>
+
+                  <div class="espacio"></div>
+
+                  <button (click)="eliminarCriterio(i)" class="button-delete-config">
+                    <i class="fas fa-trash"></i>
+                    Eliminar
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <button (click)="agregarCriterio()" class="button-add-nueva-config">
+              <i class="fas fa-plus-circle"></i> AGREGAR CRITERIO
+            </button>
+          </div>
+
+          <div class="config-botones">
+            <div class="config-botones-item elemento-ocultable">
+              <button (click)="clickCerrarModal()" class="boton-cancelar ">
+                Cancelar
+              </button>
+            </div>
+            <div class="config-botones-item">
+              <button (click)="actualizarCriteriosGrupo()" class="boton-gestion-caso primario">
+                Guardar
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="cambioEstado && mensajeResultadoOperacion" class="mensaje-satisfactorio">
+          <div class="mensaje-satisfactorio-icono">
+            <i class="fas fa-check"></i>
+          </div>
+          <div class="mensaje-satisfactorio-texto">
+            {{ mensajeResultadoOperacion }}
+          </div>
+          <div class="espacio-abajo"></div>
+          <div (click)="clickCerrarModal()" class="mensaje-satisfactorio-boton-entendido">
+            Entendido
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

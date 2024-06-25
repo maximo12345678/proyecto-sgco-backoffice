@@ -1,0 +1,378 @@
+/* TABLA */
+.tabla-contracargos {
+    width: auto;
+    min-width: 100%;
+    white-space: nowrap;
+    border-collapse: collapse;
+    border-radius: 5px;
+}
+
+.tabla-contracargos th,
+.tabla-contracargos td {
+    padding: 10px;
+    text-align: left;
+    max-width: 100px; /* Establece un ancho máximo para los campos */
+    overflow: hidden; /* Oculta el contenido que excede el ancho */
+    text-overflow: ellipsis; /* Muestra puntos suspensivos (...) si el contenido es demasiado ancho */
+}
+
+.tabla-contracargos tr {
+    border-bottom: 1px solid #e6e9f0;
+}
+
+.tabla-contracargos thead {
+    background-color: #F6F8FC;
+}
+
+.tabla-contracargos thead tr th {
+    color: var(--color-variante-secundario);
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 21px;
+}
+
+.tabla-contracargos thead tr th i:hover {
+    cursor: pointer;
+    color: var(--color-variante-primario);
+}
+
+.tabla-contracargos tbody tr:hover {
+    background-color: var(--color-apoyo1);
+}
+
+.tabla-contracargos tbody tr td {
+    color: black;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+.tabla-contracargos th i {
+    margin-left: 5px;
+    font-size: 12px;
+}
+
+/* campo caso */
+.tabla-campo-caso {
+    display: flex;
+    flex-direction: column;
+    padding-right: 50px;
+}
+
+.tabla-campo-caso-id {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 25px;
+}
+
+.tabla-campo-caso-marca {
+    color: var(--color-apoyo4);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+}
+
+.barra-color-rojo {
+    border-left: 3px solid var(--color-error);
+}
+
+.barra-color-amarillo {
+    border-left: 3px solid var(--color-alert);
+}
+
+.barra-color-verde {
+    border-left: 3px solid var(--color-primario);
+}
+
+
+/* campo boton gestionar */
+.tabla-campo-gestionar button {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 21px;
+    color: var(--color-variante-secundario);
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.ojo-tabla-gestionar{
+    margin-left: 5px;
+}
+
+
+
+
+
+
+
+
+/* ubcacion seccion tabla */
+.tabla-content {
+    margin: 20px 0px 0px 0px;
+    margin-left: 104px;
+    background-color: white;
+    margin-right: 25px;
+    border-radius: 5px;
+    border: 1px solid #dcdfe4;
+    margin-bottom: 30px;
+   
+}
+
+.tabla-content-element{
+    overflow-x: auto;
+    width: 100%;
+    position: relative;
+}
+
+.tabla-content-paginacion {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    padding: 12px;
+}
+
+.tabla-content-paginacion.vacia {
+    margin-top: 0;
+    padding: 4px 7px;
+    margin-bottom: 12px;
+}
+
+.registroSeleccionado{
+    background-color: var(--color-6);
+}
+
+.mensaje-tablas{
+    margin-top: 5px;
+    margin-left: 10px;
+    background-color: var(--color-7);
+    padding: 20px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    border-radius: 5px;
+}
+
+.mensaje-tablas i{
+    color: var(--color-secundario);
+}
+
+
+
+
+
+
+
+/* PAGINACION */
+.cantidad-resultados-tabla-contracargos {
+    color: black;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+}
+
+
+.pagination {
+    display: flex;
+    align-items: center;
+}
+
+.pagination-button {
+    border: none;
+    background: none;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: var(--color-apoyo1);
+}
+
+.pagination-page {
+    margin: 0 5px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.pagination-ellipsis {
+    margin: 0 5px;
+}
+
+
+.boton-pagina-seleccionado{
+    background-color: var(--color-6);
+}
+
+
+
+
+
+@media(max-width: 670px){
+    /*Responsive sacamos el texto de abajo de la tabla*/
+    .cantidad-resultados-tabla-contracargos{
+        display: none;
+    }
+
+    /*Responsive ojo grande de gesiontar caso*/
+    .ojo-tabla-gestionar{
+        font-size: 1.3rem;
+        margin-left: 20px;
+    }
+
+
+    
+    /*Responsive tabla*/
+    .tabla-content {
+        margin-left: 10px;
+    }
+    
+}
+
+
+
+@media(max-width: 1145px) {
+
+    .tabla-contracargos thead th:first-child,
+    .tabla-contracargos tbody td:first-child,
+    .tabla-contracargos thead th:last-child,
+    .tabla-contracargos tbody td:last-child {
+        position: sticky;
+        left: 0;
+        right: 0;
+        z-index: 2;
+        background-color: #fff;
+    }
+
+    .tabla-contracargos thead th:first-child,
+    .tabla-contracargos tbody td:first-child {
+        box-shadow: 8px 0px 5px -5px #bbbbbb;
+    }
+
+    .tabla-contracargos thead th:last-child,
+    .tabla-contracargos tbody td:last-child {
+        box-shadow: -8px 0px 5px -5px #888;
+    }
+
+}
+
+
+/* TABLA, la mayoria de los atributos son iguales a los de tabla-contracargos */
+.tabla-grupos {
+  width: auto;
+  min-width: 100%;
+  white-space: nowrap;
+  border-collapse: collapse;
+}
+
+.tabla-grupos th,
+.tabla-grupos td {
+  padding: 10px;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tabla-grupos tr {
+  border-bottom: 1px solid #e6e9f0;
+}
+
+.tabla-grupos thead {
+  background-color: #f6f8fc;
+}
+
+.tabla-grupos thead tr th {
+  color: var(--color-variante-secundario);
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 21px;
+}
+
+.tabla-grupos tbody tr td {
+  color: black;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25px;
+}
+
+.tabla-grupos th i {
+  margin-left: 5px;
+  font-size: 12px;
+}
+
+/* efecto row hover solo en pantallas anchas */
+@media (min-width: 670px) {
+  .tabla-grupos thead tr th i:hover {
+    cursor: pointer;
+    color: var(--color-variante-primario);
+  }
+
+  .tabla-grupos tbody tr:hover {
+    background-color: var(--color-apoyo1);
+  }
+}
+
+/* responsividad, tabla vista mobile / pantallas angostas */
+@media (max-width: 670px) {
+
+  .tabla-grupos {
+    border: none;
+    border-collapse: separate;
+  }
+  .tabla-grupos th,
+  .tabla-grupos td {
+    max-width: 110px;
+  }
+
+  .tabla-grupos thead th:last-child,
+  .tabla-grupos tbody td:last-child {
+    max-width: 68px;
+    text-overflow: ellipsis;
+    text-align: center;
+    box-shadow: none;
+    border-left-width: 0.5px !important;
+    border-left-color: #9ccdf072 !important;
+    position: sticky;
+    left: 0;
+    right: 0;
+    z-index: 2;
+  }
+
+  .tabla-grupos tbody td:last-child {
+    background-color: white;
+  }
+
+  .tabla-grupos thead th:first-child,
+  .tabla-grupos tbody td:first-child {
+    min-width: 300px;
+    box-shadow: none;
+  }
+  .tabla-grupos .criterios-col {
+    min-width: 54px;
+  }
+
+}
+
+@media (max-width: 550px) {
+  .tabla-grupos thead th:first-child,
+  .tabla-grupos tbody td:first-child {
+    min-width: 240px;
+  }
+  .tabla-grupos .criterios-col {
+    max-width: 54px;
+  }
+}
+@media (max-width: 400px) {
+  .tabla-grupos thead th:first-child,
+  .tabla-grupos tbody td:first-child {
+    min-width: 160px;
+  }
+}
+
+.no-aplicar-estilos-campo-largo {
+  max-width: none; /* Anula el ancho máximo para esta celda */
+  overflow: visible; /* Permite que el contenido se muestre completamente */
+  text-overflow: unset; /* Restablece la propiedad text-overflow a su valor predeterminado */
+}

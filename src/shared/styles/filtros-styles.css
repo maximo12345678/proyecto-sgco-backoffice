@@ -1,0 +1,125 @@
+/* FILTROS */
+.boton-desplegable-filtros {
+    background-color: white;
+    border: none;
+}
+
+.boton-desplegable-filtros i {
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-primario);
+    color: white;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 0px 7px 4px 7px;
+    margin-left: 4px;
+}
+
+
+.container-filtros {
+	  display: flex;
+    position: relative;
+}
+
+.filter-popup {
+    display: block;
+    position: absolute;
+    top: 100%;
+    margin-left: 3px;
+    background-color: #fff;
+    border: 1px solid #F1F1F1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 5px;
+}
+
+.filtros-opciones{
+    display: flex;
+    flex-direction: column;
+    min-width: 230px; /* Ancho mínimo deseado */
+    padding: 12px;
+}
+
+.filtros-opciones-principal{
+    margin: 0;
+    margin-top: 8px;
+    color: #0E1C4B;
+    border: none;
+    background-color: white;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 25px;
+    white-space: nowrap; /* Evita el corte de texto en varios líneas */
+    margin-bottom: 10px; /* Espacio entre elementos */
+    cursor: pointer;
+    align-items: left;
+}
+
+.filtros-opciones-principal:hover{
+    font-weight: 500;
+}
+
+.button-volver{
+    color: #0E1C4B;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 25px;
+    background-color: white;
+    border: none;
+    text-align: left; /* Alineación horizontal a la izquierda */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*Filtros Responsive*/
+.filtros-content-responsive{
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+
+    background-color: white;
+    padding: 0px 3px 0px 3px;
+    margin: 20px 10px 0px 10px;
+    gap: 0;
+}
+
+.filtros-content-responsive-element{
+    margin: 0px 20px 0px 20px;
+    padding: 20px 20px 20px 12px;
+    background-color: white;
+    border: none;
+    color: var(--color-secundario);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+}
+
+.filtros-content-responsive-element.seleccionado{
+    background-color: var(--color-6);
+}
+
+
+
+@media(max-width: 670px){
+
+    /*Responsive filtros*/
+    #filtros-desktop{
+        display: none;    
+    }
+    .filtros-content-responsive{
+        display: flex;
+    }
+
+}

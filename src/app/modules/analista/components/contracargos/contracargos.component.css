@@ -1,0 +1,245 @@
+/* ubicacion seccion indicadores */
+.indicadores-content {
+    margin: 20px 0px 0px 60px;
+    background: #fdfbf9;
+    box-shadow: 0px 1px 0px #C0C9D5;
+    height: auto;
+    padding: 0px 0px 15px 0px;
+
+}
+
+.indicadores-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    margin-left: 50px;
+    flex-wrap: wrap;
+    /* grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); Crea columnas automáticas con un ancho mínimo de 200px */
+    gap: 10px;
+}
+
+
+
+
+
+/* ubicacion seccion filtros - fechas tabla*/
+.filtros-content {
+    margin: 60px 0px 0px 100px;
+
+    display: flex;
+    align-items: center;
+}
+
+.filtros-content-element {
+    margin-right: 25px;
+}
+
+
+
+
+/**/
+.cantidad-registros {
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
+    color: var(--color-secundario);
+    margin-left: 25px;
+}
+
+
+.estado-dashboard {
+    display: flex;
+    flex-direction: column;
+}
+
+.estado-dashboard-icono {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 22px;
+}
+
+.estado-dashboard-icono i {
+    margin-right: 3px;
+}
+
+
+
+
+/*tabla dashboard*/
+.tabla-contracargos-dashboard {
+    width: 100%;
+    white-space: nowrap;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 5px;
+}
+
+.tabla-contracargos-dashboard thead {
+    background-color: #f9f9f9;
+}
+
+.tabla-contracargos-dashboard tbody {
+    background-color: #fff;
+}
+
+.tabla-contracargos-dashboard th,
+.tabla-contracargos-dashboard td {
+    padding: 10px;
+    text-align: left;
+    border: none;
+    position: relative;
+    max-width: 150px; /* Uniform maximum width for state fields */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.tabla-contracargos-dashboard thead tr th {
+    text-align: center;
+    color: var(--color-secundario);
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 22px;
+    border-bottom: 1px dashed #ddd; /* Add dashed bottom border to the header */
+}
+
+.tabla-contracargos-dashboard .caso {
+    white-space: nowrap;
+}
+
+.tabla-contracargos-dashboard .etapa {
+    background-color: #C0C9D5;
+    color: white;
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
+    border-radius: 5px 0 0 5px;
+    text-align: center;
+    position: relative;
+}
+
+.tabla-contracargos-dashboard .active,
+.tabla-contracargos-dashboard .current {
+    background-color: #EBF3F7;
+}
+
+.tabla-contracargos-dashboard .current {
+    color: var(--color-secundario);
+    font-weight: 500;
+    font-size: 13px;
+    line-height: 22px;
+    border-radius: 0px 5px 5px 0px;
+}
+
+.fila-contracargo,
+.fila-progreso {
+    margin: 0;
+    padding: 0;
+}
+
+.progress-cell {
+    padding: 0;
+    position: relative;
+    height: 7px; /* Ajustar el tamaño de la celda de progreso */
+    border: none;
+}
+
+.progress-line-wrapper {
+    top: 10px; /* Ajuste para alinear con la celda "ETAPA" */
+    position: relative;
+    height: 7px;
+    width: calc(100% - 130px); /* Ajustar el tamaño para comenzar desde "ETAPA" */
+    background-color: #D3DBE3; /* Background color for the entire width */
+    border-radius: 5px;
+    left: 135px; /* Alineación desde la celda "ETAPA" */
+}
+
+.progress-line-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.progress-line {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    height: 7px;
+    background-color: var(--color-primario);
+    z-index: 1;
+    width: 0; /* Initialize with zero width */
+    border-radius: 5px;
+}
+
+.progress-line.yellow {
+    background-color: orange;
+}
+
+.progress-line.red {
+    background-color: red;
+}
+
+.progress-bubble {
+    position: absolute;
+    top: -15px; /* Adjust as needed */
+    right: 0;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    z-index: 5;
+    transform: translateX(50%); /* Center the bubble horizontally */
+    white-space: nowrap; /* Prevent text from wrapping */
+
+}
+
+.progress-bubble.green {
+    background-color: var(--color-primario);
+}
+
+.progress-bubble.yellow {
+    background-color: orange;
+}
+
+.progress-bubble.red {
+    background-color: red;
+}
+
+.tabla-contracargos-dashboard td {
+    border-left: 1px dashed #ddd; /* Add dashed vertical lines */
+    background-clip: padding-box; /* Ensure background-clip covers padding */
+}
+
+.tabla-contracargos-dashboard td.active,
+.tabla-contracargos-dashboard td.current {
+    border-left: none; /* Remove the border from active and current states */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media(max-width: 670px) {
+
+    /*Responsive indicadores*/
+    .indicadores-content {
+        margin: 40px 0px 0px 0px;
+    }
+
+    .indicadores-menu {
+        margin-left: 10px;
+    }
+
+}

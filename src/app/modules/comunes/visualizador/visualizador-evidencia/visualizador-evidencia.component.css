@@ -1,0 +1,73 @@
+.no-evidence{
+  color: white;
+  text-align: center;
+}
+
+.visualizador-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.cuerpo-scrollable {
+  max-height: 73vh;
+  overflow-y: auto;
+  width: 90%;
+}
+
+.visualizador{
+  height: 73vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.visualizador-pdf {
+  width: 100%;
+  height: 73vh;
+}
+
+.spinner.white {
+    width: 150px;
+    height: 150px;
+    border: 4px solid white;
+}
+
+.document-navigator {
+  position: absolute;
+  top: 50%;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: white;
+  padding: 24px 8px;
+  border-radius: 8px;
+}
+
+.document-navigator:hover {
+  background-color: rgba(11, 11, 50, 0.436);
+}
+
+.document-navigator:disabled {
+  background-color: transparent;
+  cursor: default;
+  color: gray;
+}
+
+.document-navigator  i.fas {
+  padding: 8px;
+}
+
+.document-navigator.left {
+  left: 1%;
+}
+.document-navigator.right {
+  right: 1%;
+}
+
+.doc-count-span{
+  margin-left: 12px;
+  font-size: medium;
+}

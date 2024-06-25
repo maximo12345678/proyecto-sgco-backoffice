@@ -1,0 +1,102 @@
+Entregas:
+
+- 23 de junio:
+    Muestra primer sprint, mostrar avance en diseño base.
+
+
+- 21 de agosto
+
+    PRIMER Y SEGUNDO RELEASE: 
+    Objetivo: ver los contracargos, desde que llegaron hasta que se debito.
+
+    Analista:
+    -Poder tener la primer vista de los contracargos, casos reales.
+    -Los indicadores, pueden ir fijos al principio.
+    -Botones, Por Gestionar ahora. notificamos, cerramos o representar. (vista de la modal con datos del caso - botones - historial). si cerras, queda como cierre programado.
+    -Casos por cerrar, aca se deberian ver los contracargos listos para cierre, se abre y se cierra en la modal.
+    
+    
+    Si da tiempo:
+    Analista:
+    -configuracion motivos. (si llegamos). 
+
+    Admin:
+    -configuraciones -> debito inicial.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Tareas:
+
+- Manejo de rutas, ruta login.
+- Desarrollar interfaz del login. 
+- Mantener rol (y con esto mostrar distintas funcionalidades)
+- Mantener sesion iniciada
+- Navegador
+- Responsividad
+- Variables globales css
+- variable entorno nombre ruta microfront
+
+- Configuracion de AWS S3.
+- Traer y mostrar pdf o imagen de S3.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Diseños comunes:
+- Tipografias
+- Botones
+- Paleta colores
+- Inputs
+- Tablas
+- Sidebar 
+- Controles de seleccion.
+
+
+
+Carpeta SHARED, primero voy a crear un archivo 'normal-styles.css' y ahi poner todos los estilos, separados por
+comentarios para dividirlos.
+Ya esta importado en el archivo principal de diseños 'styles.css', entonces estos diseños sirven para todo el codigo.
+
+Creando un componente FLUJO-ANALISTA , voy a hacer todo el home de analista. El html y usando los diseños de normal-styles.
+una vez terminado y que funcione todo bien, la responsividad de la plantilla flujo-analista. Ahi recien,
+crear un componente para cada elemento, con el mismo html, solo ver la manera de parametrizar y recibir el evento.
+
+
+obviamente falta enrutar bien con los botones del menu, y eso
+
+
+asi tengo que armar la estructura con los diseños para poder reutilizarlos y llamarlos desde la plantilla de analista, admin, etc.
+shared
+      diseños 
+             components
+                        indicadores
+                                    indicadores.component.ts
+                                    indicadores.component.html
+                                    indicadores.component.css
+                        tabla
+                                    tabla.component.ts
+                                    tabla.component.html
+                                    tabla.component.css    
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+Tema consultas GET tablas, filtros, ordenamiento y paginacion.
+
+
+Estructura de carpetas
+
+
+Reutilizacion de codigo
+
+
+
+-------------------------
+
+Terminar buscador, desplegable.
+empezar con la tabla.
+misma funcionalidad de estados a botones menu
+
+
+unificar el tamaño de las letras, para en responsive cambiarlo una vez nomas

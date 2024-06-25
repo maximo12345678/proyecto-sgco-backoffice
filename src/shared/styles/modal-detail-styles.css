@@ -1,0 +1,119 @@
+/* MODAL GESTIONAR CASO */
+.modal-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--color-fondo-modales);
+    z-index: 9999;
+}
+
+.modal-content {
+    width: 53%;
+    height: 100%;
+    background-color: #fff;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 20px 0px 0px 20px;
+}
+
+.modal-content-titulo {
+    color: var(--color-secundario);
+    font-weight: 600;
+    font-size: 1.4rem;
+    line-height: 32px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 30px;
+    height: 30px;
+    color: var(--color-secundario);
+}
+
+.cuerpo-scrollable {
+    max-height: 90vh;
+    /* Establece el tamaño máximo para el contenido el 100%, relativo.*/
+    overflow-y: auto;
+    /* Habilita la barra de desplazamiento vertical */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* MENSAJE SATISFACTORIO */
+.mensaje-satisfactorio {
+    display: flex;
+    flex-direction: column;
+    padding: 80px;
+    align-items: center;
+    background-color: rgb(255, 248, 248);
+}
+
+.mensaje-satisfactorio-icono {
+    color: white;
+    background-color: var(--color-primario);
+    padding: 10px;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+}
+
+
+.mensaje-satisfactorio-texto {
+    font-weight: 600;
+    size: 25px;
+    line-height: 35px;
+    color: var(--color-secundario);
+}
+
+.mensaje-satisfactorio-boton-entendido {
+    font-weight: 500;
+    size: 13px;
+    line-height: 21px;
+    color: var(--color-secundario);
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.mensaje-satisfactorio-boton-entendido:hover {
+    background-color: var(--color-apoyo1);
+}
+
+.mensaje-satisfactorio-boton-entendido.solid-background {
+  background-color: var(--color-primario);
+  color: var(--color-7);
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+
+
+@media(max-width: 750px){
+    .modal-content {
+        width: 80%;
+    }
+}
